@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Move")]
     [SerializeField] private float moveSpeed;
+
+    [Header("Ghost")]
+    private bool ghosting;
+
+    [Header("Shot")]
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform gun;
     [SerializeField] private Transform shotPoint;
@@ -18,13 +24,13 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Moving();
+        Move();
         Shot();
-        Ghosting();
+        Ghost();
 
     }
 
-    private void Moving()
+    private void Move()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
@@ -48,8 +54,20 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Ghosting()
+    private void Ghost()
     { 
+        ghosting = Input.GetKey(KeyCode.Space);
         
+        if (ghosting)
+        {
+            Time.timeScale = 0.5f;
+            GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+
+            
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 }
