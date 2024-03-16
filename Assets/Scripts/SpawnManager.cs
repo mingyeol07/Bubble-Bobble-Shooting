@@ -16,7 +16,6 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(enemyPrefabs[0]);
         Spawn();
     }
 
