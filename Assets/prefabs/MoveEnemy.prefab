@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1537833599576912225}
   - component: {fileID: 2669260233158084826}
   - component: {fileID: 311642817870102191}
-  - component: {fileID: 2518726145924955273}
+  - component: {fileID: 3874785758593952380}
   m_Layer: 8
   m_Name: MoveEnemy
   m_TagString: Enemy
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2518726145924955273
+--- !u!114 &3874785758593952380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0cc1a7163fb0664ba7d2e0503464f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  upDownMoveSpeed: 0.8
-  moveCool: 0.5
+  moveSpeed: 2
   maxHp: 5
+  amplitude: 1

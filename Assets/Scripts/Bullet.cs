@@ -13,7 +13,8 @@ public class Bullet : MonoBehaviour
 
     public void Moving(Vector2 direction)
     {
-        GetComponent<Rigidbody2D>().velocity = direction.normalized * speed;
+        Vector2 dir = direction;
+        GetComponent<Rigidbody2D>().velocity = dir.normalized * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

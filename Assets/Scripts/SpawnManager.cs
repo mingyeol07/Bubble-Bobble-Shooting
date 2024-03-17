@@ -21,7 +21,7 @@ public class SpawnManager : MonoBehaviour
 
     private void Spawn()
     {
-        GameObject Enemy = Instantiate(enemyPrefabs[0], this.transform);
+        GameObject Enemy = Instantiate(enemyPrefabs[0], transform);
         Enemy.transform.position = spawnPoints[3].position;
     }
 }

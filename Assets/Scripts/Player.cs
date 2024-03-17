@@ -48,8 +48,8 @@ public class Player : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-           GameObject obj = Instantiate(bullet, transform);
-           obj.GetComponent<Bullet>().Moving(mousePos - (Vector2)shotPoint.position);
+            GameObject obj = Instantiate(bullet, shotPoint.position, Quaternion.AngleAxis(angle, new Vector3(0, 0, Vector3.forward.z)));
+            obj.GetComponent<Bullet>().Moving(mousePos - (Vector2)shotPoint.position);
 
         }
     }
