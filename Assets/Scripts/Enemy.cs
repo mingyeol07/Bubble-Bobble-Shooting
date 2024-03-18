@@ -1,20 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class MoveEnemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private int maxHp;
+    [SerializeField] private float setupMoveDistance;
     private int curHp;
 
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
-
-    public float amplitude = 1f; // ÁøÆø
-
-    private float angle = 0f;
 
     private void Start()
     {
@@ -25,7 +20,7 @@ public class MoveEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

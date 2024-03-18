@@ -7,8 +7,9 @@ public class SpawnManager : MonoBehaviour
     public static SpawnManager instance;
 
     [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private Transform[] stopPoints;
     [SerializeField] private GameObject[] enemyPrefabs;
-
+   
     private void Awake()
     {
         instance = this;
@@ -16,12 +17,22 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        Spawn();
+        StartCoroutine(SpawnAction());
     }
 
-    private void Spawn()
+    IEnumerator SpawnAction()
     {
-        GameObject Enemy = Instantiate(enemyPrefabs[0], transform);
-        Enemy.transform.position = spawnPoints[3].position;
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            StraightSpawn(0, i);
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
+    private void StraightSpawn(int enemyNumber, int point)
+    {
+        GameObject Enemy = Instantiate(enemyPrefabs[enemyNumber], transform);
+        Enemy.transform.position = spawnPoints[point].position;
+        Enemy.GetComponent<EnemySetupPosition>().SpawnMove(stopPoints[point]);
     }
 }
