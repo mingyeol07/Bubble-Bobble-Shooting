@@ -33,6 +33,6 @@ public class SpawnManager : MonoBehaviour
     {
         GameObject Enemy = Instantiate(enemyPrefabs[enemyNumber], transform);
         Enemy.transform.position = spawnPoints[point].position;
-        Enemy.GetComponent<EnemySetupPosition>().SpawnMove(stopPoints[point]);
+        Enemy.GetComponent<EnemySetup>().SpawnMove(stopPoints[point]);
     }
 }

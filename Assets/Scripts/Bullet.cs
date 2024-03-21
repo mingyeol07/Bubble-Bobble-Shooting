@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
+    [SerializeField] private GameObject effect;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            Destroy(Instantiate(effect, transform.position, Quaternion.identity), 0.5f);
             Destroy(gameObject);
         }
     }
