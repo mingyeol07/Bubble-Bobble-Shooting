@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -8,8 +10,8 @@ public class Player : MonoBehaviour
 
     [Header("Ghost")]
     [SerializeField] private bool ghosting;
-    [SerializeField] private float ghostSpeed;
     [SerializeField] private GameObject ghostSoul;
+    [SerializeField] private Image ghostGage;
     private GameObject closeEnemy;
 
     [Header("Shot")]
@@ -18,11 +20,13 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform shotPoint;
 
     private Rigidbody2D rigid;
+    private SpriteRenderer myRenderer;
     private Vector2 moveDirection;
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        myRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -33,21 +37,24 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if(!ghosting) { Move(); }
     }
 
     private void ProcessInput()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(x, y).normalized;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && ghosting == false)
         {
             Shot();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && ghosting == false) StartCoroutine(GhostStart());
+        if (Input.GetKeyDown(KeyCode.LeftShift) && ghosting == false)
+        {
+            StartCoroutine(GhostStart());
+        }
     }
 
     private void Move()
@@ -71,15 +78,16 @@ public class Player : MonoBehaviour
     {
         if (ghosting)
         {
+            ghostGage.fillAmount -= Time.deltaTime / 1;
             GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
-            float closestDistance = Mathf.Infinity; // 가장 가까운 거리를 저장하는 변수를 무한대로 초기화
+            float closestDistance = Mathf.Infinity; 
 
-            GameObject previousCloseEnemy = closeEnemy; // 이전 프레임에서 가장 가까웠던 적을 기억
-            closeEnemy = null; // 가장 가까운 적을 찾기 전에 null로 초기화
+            GameObject previousCloseEnemy = closeEnemy;
+            closeEnemy = null;
 
             for (int i = 0; i < enemys.Length; i++)
             {
-                float distance = Vector3.Distance(transform.position, enemys[i].transform.position);
+                float distance = Vector3.Distance(ghostSoul.transform.position, enemys[i].transform.position);
                 if (distance < closestDistance)
                 {
                     closestDistance = distance;
@@ -87,13 +95,11 @@ public class Player : MonoBehaviour
                 }
             }
 
-            // 이전에 가장 가까웠던 적의 색상을 원래대로 돌림
             if (previousCloseEnemy != null && previousCloseEnemy != closeEnemy)
             {
                 previousCloseEnemy.GetComponentInChildren<SpriteRenderer>().color = Color.white; // 원래 색으로 돌리는 코드, 실제 색에 맞게 조정 필요
             }
 
-            // 새로 가장 가까운 적을 파란색으로 변경
             if (closeEnemy != null)
             {
                 closeEnemy.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
@@ -101,32 +107,30 @@ public class Player : MonoBehaviour
         }
     }
 
-    private IEnumerator GhostStart()
+    public IEnumerator GhostStart()
     {
-        GameManager.instance.ghostScreen.SetActive(true);
-        float nomalSpeed = moveSpeed;
-        moveSpeed = ghostSpeed;
+        ghostSoul.SetActive(true);
+        ghostSoul.transform.position = this.transform.position;
         ghosting = true;
+        GameManager.instance.ghostScreen.SetActive(true);
+        GameManager.instance.virtualCamera.Follow = ghostSoul.transform;
+        myRenderer.color = Color.blue;
+
+        rigid.velocity = Vector3.zero;
 
         yield return new WaitForSeconds(1f);
 
+        GameManager.instance.virtualCamera.Follow = this.transform;
+        ghostSoul.SetActive(false);
         GameManager.instance.ghostScreen.SetActive(false);
-        moveSpeed = nomalSpeed;
+        myRenderer.color = Color.white;
 
-        // closeEnemy가 유효한 경우에만 위치 변경
         if (closeEnemy != null)
         {
-            transform.position = closeEnemy.transform.position; // 자식 오브젝트가 아닌 적 자체의 위치로 이동
+            this.transform.position = closeEnemy.transform.position;
         }
 
+        ghostGage.fillAmount = 1f;
         ghosting = false;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(ghosting == false)
-        {
-            
-        }
     }
 }
