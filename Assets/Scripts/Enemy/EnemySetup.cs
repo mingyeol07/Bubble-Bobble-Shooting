@@ -32,11 +32,16 @@ public class EnemySetup : MonoBehaviour
         hp -= 1;
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
 
         spriteRenderer.color = new Color(color.r, color.g, color.b, 0.4f);
         yield return new WaitForSeconds(0.1f);
         spriteRenderer.color = new Color(color.r, color.g, color.b, 1f);
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }

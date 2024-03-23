@@ -1,7 +1,5 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -11,7 +9,6 @@ public class Player : MonoBehaviour
     [Header("Ghost")]
     [SerializeField] private bool ghosting;
     [SerializeField] private GameObject ghostSoul;
-    [SerializeField] private Image ghostGage;
     private GameObject closeEnemy;
 
     [Header("Shot")]
@@ -78,7 +75,6 @@ public class Player : MonoBehaviour
     {
         if (ghosting)
         {
-            ghostGage.fillAmount -= Time.deltaTime / 1;
             GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
             float closestDistance = Mathf.Infinity; 
 
@@ -112,7 +108,7 @@ public class Player : MonoBehaviour
         ghostSoul.SetActive(true);
         ghostSoul.transform.position = this.transform.position;
         ghosting = true;
-        GameManager.instance.ghostScreen.SetActive(true);
+        //GameManager.instance.ghostScreen.SetActive(true);
         GameManager.instance.virtualCamera.Follow = ghostSoul.transform;
         myRenderer.color = Color.blue;
 
@@ -122,15 +118,15 @@ public class Player : MonoBehaviour
 
         GameManager.instance.virtualCamera.Follow = this.transform;
         ghostSoul.SetActive(false);
-        GameManager.instance.ghostScreen.SetActive(false);
+        //GameManager.instance.ghostScreen.SetActive(false);
         myRenderer.color = Color.white;
 
         if (closeEnemy != null)
         {
             this.transform.position = closeEnemy.transform.position;
+            closeEnemy.GetComponent<EnemySetup>().Die();
         }
 
-        ghostGage.fillAmount = 1f;
         ghosting = false;
     }
 }
