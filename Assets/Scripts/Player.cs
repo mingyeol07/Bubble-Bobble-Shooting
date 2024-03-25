@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [Header("Ghost")]
     [SerializeField] private bool ghosting;
     [SerializeField] private GameObject ghostSoul;
-    private GameObject closeEnemy;
+    private GameObject enemy;
 
     [Header("Shot")]
     [SerializeField] private GameObject bullet;
@@ -75,32 +75,13 @@ public class Player : MonoBehaviour
     {
         if (ghosting)
         {
-            GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
-            float closestDistance = Mathf.Infinity; 
-
-            GameObject previousCloseEnemy = closeEnemy;
-            closeEnemy = null;
-
-            for (int i = 0; i < enemys.Length; i++)
-            {
-                float distance = Vector3.Distance(ghostSoul.transform.position, enemys[i].transform.position);
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closeEnemy = enemys[i];
-                }
-            }
-
-            if (previousCloseEnemy != null && previousCloseEnemy != closeEnemy)
-            {
-                previousCloseEnemy.GetComponentInChildren<SpriteRenderer>().color = Color.white; // 원래 색으로 돌리는 코드, 실제 색에 맞게 조정 필요
-            }
-
-            if (closeEnemy != null)
-            {
-                closeEnemy.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-            }
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
+    }
+
+    public void SetEnemy(GameObject go)
+    {
+        enemy = go;
     }
 
     public IEnumerator GhostStart()
@@ -120,12 +101,6 @@ public class Player : MonoBehaviour
         ghostSoul.SetActive(false);
         //GameManager.instance.ghostScreen.SetActive(false);
         myRenderer.color = Color.white;
-
-        if (closeEnemy != null)
-        {
-            this.transform.position = closeEnemy.transform.position;
-            closeEnemy.GetComponent<EnemySetup>().Die();
-        }
 
         ghosting = false;
     }

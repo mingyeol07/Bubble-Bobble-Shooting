@@ -19,16 +19,27 @@ public class Ghost : MonoBehaviour
 
     private void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-        moveDirection = new Vector2(x, y).normalized;
 
-        if (x < 0) spriteRenderer.flipX = true;
-        else if (x > 0) spriteRenderer.flipX = false;
     }
 
     private void FixedUpdate()
     {
         rb.velocity = moveDirection * speed;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            closeEnemy = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            closeEnemy = collision.gameObject;
+        }
     }
 }
