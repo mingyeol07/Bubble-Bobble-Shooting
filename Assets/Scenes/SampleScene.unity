@@ -2126,7 +2126,7 @@ GameObject:
   - component: {fileID: 1829030206}
   - component: {fileID: 1829030205}
   m_Layer: 5
-  m_Name: Gauge
+  m_Name: img_ghostgauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2359,6 +2359,8 @@ MonoBehaviour:
   moveSpeed: 5
   ghosting: 0
   ghostSoul: {fileID: 5507949055022005441}
+  ghostGauge: {fileID: 1829030205}
+  gaugeValueSecond: 0
   bullet: {fileID: 649098831324623068, guid: 3508ac30d5e73e84a81bdb42a8b0898b, type: 3}
   gun: {fileID: 1507597786}
   shotPoint: {fileID: 419527339}

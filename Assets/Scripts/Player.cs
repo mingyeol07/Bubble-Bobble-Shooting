@@ -1,5 +1,7 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class Player : MonoBehaviour
     [Header("Ghost")]
     [SerializeField] private bool ghosting;
     [SerializeField] private GameObject ghostSoul;
+    [SerializeField] private Image ghostGauge;
+    [SerializeField] private float gaugeValueSecond;
     private GameObject enemy;
 
     [Header("Shot")]
@@ -48,9 +52,24 @@ public class Player : MonoBehaviour
             Shot();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && ghosting == false)
+        if (Input.GetKey(KeyCode.Mouse1))
         {
-            StartCoroutine(GhostStart());
+            ghostGauge.fillAmount -= Time.unscaledDeltaTime / 3;
+        }
+        else
+        {
+            ghostGauge.fillAmount += Time.unscaledDeltaTime / 10;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            ghosting = true;
+            rigid.velocity = Vector3.zero;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Mouse1)) 
+        {
+            ghosting = false;
         }
     }
 
@@ -82,26 +101,5 @@ public class Player : MonoBehaviour
     public void SetEnemy(GameObject go)
     {
         enemy = go;
-    }
-
-    public IEnumerator GhostStart()
-    {
-        ghostSoul.SetActive(true);
-        ghostSoul.transform.position = this.transform.position;
-        ghosting = true;
-        //GameManager.instance.ghostScreen.SetActive(true);
-        GameManager.instance.virtualCamera.Follow = ghostSoul.transform;
-        myRenderer.color = Color.blue;
-
-        rigid.velocity = Vector3.zero;
-
-        yield return new WaitForSeconds(1f);
-
-        GameManager.instance.virtualCamera.Follow = this.transform;
-        ghostSoul.SetActive(false);
-        //GameManager.instance.ghostScreen.SetActive(false);
-        myRenderer.color = Color.white;
-
-        ghosting = false;
     }
 }
