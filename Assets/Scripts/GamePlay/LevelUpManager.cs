@@ -1,13 +1,11 @@
-using Cinemachine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+// player - soul, bullet, levelUp
+public class LevelUpManager : MonoBehaviour
 {
-    public static GameManager instance;
-    public GameObject ghostScreen;
-    public CinemachineVirtualCamera virtualCamera;
-    
     [Header("SoulBox")]
     [SerializeField] private Image img_soulBox;
     [SerializeField] private Sprite[] img_soulBoxLevel;
@@ -18,38 +16,30 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite[] img_playerLevel;
     [SerializeField] private SpriteRenderer playerSprite;
 
-    [SerializeField] private RectTransform cursorPos;
+    [Header("Bullet")]
+    [SerializeField] private GameObject[] obj_bulletLevel;
 
-    private void Awake()
-    {
-        instance = this;
-    }
+    // test
+    [SerializeField] private GameObject ghostScreen;
 
-    private void Start()
+    void Start()
     {
-        Cursor.visible = false;
         soulLevel = 0;
         img_soulBox.sprite = img_soulBoxLevel[0];
         playerSprite.sprite = img_playerLevel[0];
     }
 
-    private void Update()
+    void Update()
     {
-        CursorPos();
+        if (Input.GetKeyDown(KeyCode.F1)) GetSoul();
 
         img_soulBox.fillAmount = soulIndex / 10;
-    }
-
-    private void CursorPos()
-    {
-        Vector2 mousePos = Input.mousePosition;
-        cursorPos.position = mousePos;
     }
 
     public void GetSoul()
     {
         soulIndex++;
-        if(soulIndex >= 10)
+        if (soulIndex >= 10)
         {
             soulIndex = 0;
             soulLevel++;

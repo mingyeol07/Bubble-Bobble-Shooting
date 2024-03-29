@@ -22,18 +22,19 @@ public class EnemySetup : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            StartCoroutine(HpDown());
+            StartCoroutine(HpDown(collision.GetComponent<Bullet>().damage));
         }
     }
 
-    private IEnumerator HpDown()
+    private IEnumerator HpDown(int value)
     {
-        Color color = spriteRenderer.color;
-        hp -= 1;
+        hp -= value;
         if (hp <= 0)
         {
             Die();
         }
+
+        Color color = spriteRenderer.color;
 
         spriteRenderer.color = new Color(color.r, color.g, color.b, 0.4f);
         yield return new WaitForSeconds(0.1f);

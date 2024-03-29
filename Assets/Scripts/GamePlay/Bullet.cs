@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 10f;
+    [SerializeField] private float speed = 20f;
     [SerializeField] private GameObject effect;
+    public int damage = 1;
 
     private void Start()
     {

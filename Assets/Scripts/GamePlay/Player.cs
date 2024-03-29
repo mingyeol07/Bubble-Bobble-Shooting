@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
+// shot, move, ghost
 public class Player : MonoBehaviour
 {
     [Header("Move")]
@@ -34,6 +35,9 @@ public class Player : MonoBehaviour
     {
         ProcessInput();
         Ghosting();
+
+        if (Input.GetKey(KeyCode.Mouse1)) ghosting = true;
+        else ghosting = false;
     }
 
     private void FixedUpdate()
@@ -52,14 +56,8 @@ public class Player : MonoBehaviour
             Shot();
         }
 
-        if (Input.GetKey(KeyCode.Mouse1))
-        {
-            ghostGauge.fillAmount -= Time.unscaledDeltaTime / 3;
-        }
-        else
-        {
-            ghostGauge.fillAmount += Time.unscaledDeltaTime / 10;
-        }
+        //Ghosting
+        
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
@@ -91,10 +89,15 @@ public class Player : MonoBehaviour
     }
 
     private void Ghosting()
-    {
+    { 
         if (ghosting)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            ghostGauge.fillAmount -= Time.unscaledDeltaTime / 3;
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(transform.position);
+        }
+        else
+        {
+            ghostGauge.fillAmount += Time.unscaledDeltaTime / 10;
         }
     }
 
