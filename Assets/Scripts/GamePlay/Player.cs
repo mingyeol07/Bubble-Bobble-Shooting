@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
         //Ghosting
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
+            enemy = null;
             ghostSoul.SetActive(true);
             ghostSoul.transform.localPosition = new Vector3(0, 0, 0);
             GameManager.instance.virtualCamera.Follow = ghostSoul.transform;
@@ -68,9 +69,14 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Mouse1)) 
         {
-            ghosting = false;
             ghostSoul.SetActive(false);
+            ghosting = false;
             GameManager.instance.virtualCamera.Follow = this.transform;
+
+            if(enemy != null)
+            {
+                transform.position = enemy.transform.position;
+            }
         }
     }
 
@@ -97,8 +103,9 @@ public class Player : MonoBehaviour
         {
             ghostGauge.fillAmount -= Time.unscaledDeltaTime / 3;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0f; // z 축 값을 고정해야 합니다.
+            mousePos.z = 0f;
             ghostSoul.transform.position = Vector3.MoveTowards(ghostSoul.transform.position, mousePos, 10f * Time.deltaTime);
+
             if (mousePos.x > ghostSoul.transform.position.x)
             {
                 ghostSoul.GetComponent<SpriteRenderer>().flipX = false;
@@ -107,6 +114,7 @@ public class Player : MonoBehaviour
             {
                 ghostSoul.GetComponent<SpriteRenderer>().flipX = true;
             }
+
             if (ghostGauge.fillAmount <= 0)
             {
                 ghosting = false;
@@ -117,6 +125,7 @@ public class Player : MonoBehaviour
         else
         {
             ghostGauge.fillAmount += Time.unscaledDeltaTime / 10;
+            
         }
     }
 
