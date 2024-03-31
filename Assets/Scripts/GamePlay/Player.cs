@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
+        ghostSoul.SetActive(false);
     }
 
     private void Update()
@@ -59,24 +60,12 @@ public class Player : MonoBehaviour
         //Ghosting
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            enemy = null;
-            ghostSoul.SetActive(true);
-            ghostSoul.transform.localPosition = new Vector3(0, 0, 0);
-            GameManager.instance.virtualCamera.Follow = ghostSoul.transform;
-            ghosting = true;
-            rigid.velocity = Vector3.zero;
+            GhostStart();
         }
 
         if (Input.GetKeyUp(KeyCode.Mouse1)) 
         {
-            ghostSoul.SetActive(false);
-            ghosting = false;
-            GameManager.instance.virtualCamera.Follow = this.transform;
-
-            if(enemy != null)
-            {
-                transform.position = enemy.transform.position;
-            }
+            GhostExit();
         }
     }
 
@@ -104,7 +93,7 @@ public class Player : MonoBehaviour
             ghostGauge.fillAmount -= Time.unscaledDeltaTime / 3;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0f;
-            ghostSoul.transform.position = Vector3.MoveTowards(ghostSoul.transform.position, mousePos, 10f * Time.deltaTime);
+            ghostSoul.transform.position = Vector3.MoveTowards(ghostSoul.transform.position, mousePos, 10f * Time.unscaledDeltaTime);
 
             if (mousePos.x > ghostSoul.transform.position.x)
             {
@@ -117,9 +106,7 @@ public class Player : MonoBehaviour
 
             if (ghostGauge.fillAmount <= 0)
             {
-                ghosting = false;
-                ghostSoul.SetActive(false);
-                GameManager.instance.virtualCamera.Follow = this.transform;
+                GhostExit();
             }
         }
         else
@@ -128,9 +115,46 @@ public class Player : MonoBehaviour
             
         }
     }
-
     public void SetEnemy(GameObject go)
     {
         enemy = go;
+    }
+
+    private void GhostStart()
+    {
+        float time = 0;
+        while (time < 1)
+        {
+            time -= Time.deltaTime;
+        }
+
+        ghostSoul.SetActive(true);
+        ghostSoul.transform.localPosition = new Vector3(0, 0, 0);
+        GameManager.instance.virtualCamera.Follow = ghostSoul.transform;
+        ghosting = true;
+        rigid.velocity = Vector3.zero;
+    }
+
+    private void GhostExit()
+    {
+        if (ghosting)
+        {
+            Time.timeScale = 1f;
+            ghosting = false;
+            GameManager.instance.virtualCamera.Follow = this.transform;
+
+            if(enemy != null)
+            {
+                transform.position = enemy.transform.position;
+                enemy.GetComponentInParent<EnemySetup>().Die();
+
+                enemy = null;
+            }
+
+            if (ghostSoul != null)
+            {
+                ghostSoul.gameObject.SetActive(false);
+            }
+        }
     }
 }

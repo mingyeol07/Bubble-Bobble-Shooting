@@ -23,22 +23,6 @@ public class Ghost : MonoBehaviour
         {
             enemy = collision.gameObject;
             enemy.GetComponent<SpriteRenderer>().color = Color.white;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            enemy = null;
-            
-        }
-    }
-
-    private void OnDisable()
-    {
-        if(enemy != null)
-        {
             player.SetEnemy(enemy);
         }
     }

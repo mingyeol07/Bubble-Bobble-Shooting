@@ -7,11 +7,9 @@ public class EnemySetup : MonoBehaviour
     [SerializeField] private int hp;
     [SerializeField] private Transform enemySprite;
     private SpriteRenderer spriteRenderer;
-    private BoxCollider2D collider;
 
     private void Start()
     {
-        collider = GetComponent<BoxCollider2D>();
         spriteRenderer = enemySprite.GetComponent<SpriteRenderer>();
     }
 
