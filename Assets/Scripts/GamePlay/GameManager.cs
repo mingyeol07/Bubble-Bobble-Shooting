@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public CinemachineVirtualCamera virtualCamera;
+    public Transform soulBoxPos;
 
     [SerializeField] private RectTransform cursorPos;
 

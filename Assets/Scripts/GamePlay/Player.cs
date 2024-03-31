@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 // shot, move, ghost
 public class Player : MonoBehaviour
@@ -122,17 +123,13 @@ public class Player : MonoBehaviour
 
     private void GhostStart()
     {
-        float time = 0;
-        while (time < 1)
-        {
-            time -= Time.deltaTime;
-        }
-
         ghostSoul.SetActive(true);
         ghostSoul.transform.localPosition = new Vector3(0, 0, 0);
         GameManager.instance.virtualCamera.Follow = ghostSoul.transform;
         ghosting = true;
         rigid.velocity = Vector3.zero;
+
+        Time.timeScale = 0.1f;
     }
 
     private void GhostExit()

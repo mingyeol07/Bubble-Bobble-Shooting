@@ -6,6 +6,7 @@ public class EnemySetup : MonoBehaviour
 {
     [SerializeField] private int hp;
     [SerializeField] private Transform enemySprite;
+    [SerializeField] private GameObject soul;
     private SpriteRenderer spriteRenderer;
 
     private void Start()
@@ -44,5 +45,6 @@ public class EnemySetup : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        Instantiate(soul, transform.position, Quaternion.identity);
     }
 }
