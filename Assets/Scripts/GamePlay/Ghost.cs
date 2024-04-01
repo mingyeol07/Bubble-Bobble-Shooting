@@ -22,7 +22,7 @@ public class Ghost : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             enemy = collision.gameObject;
-            enemy.GetComponent<SpriteRenderer>().color = Color.white;
+            LevelUpManager.instance.GetSoul();
             player.SetEnemy(enemy);
         }
     }

@@ -38,6 +38,7 @@ public class ItemDrop : MonoBehaviour
         // µµÂøÇÏ¸é ÆÄ±«
         if (ratio >= 1)
         {
+            LevelUpManager.instance.GetSoul();
             Destroy(gameObject);
         }
     }

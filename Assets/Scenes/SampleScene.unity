@@ -2375,12 +2375,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0044d1fa8afe31b44b6274237fbfb22e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -266715498, guid: 544d642be4cde164e9de03a043807582, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 1
+  m_FillAmount: 0.461
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2584,6 +2584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1598960744}
+  - component: {fileID: 1598960745}
   m_Layer: 0
   m_Name: LevelUpManager
   m_TagString: Untagged
@@ -2606,6 +2607,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1598960745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598960742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5eb476dec6ab1458f89ea7ef89b085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img_soulBox: {fileID: 1393785551}
+  img_soulBoxLevel:
+  - {fileID: -266715498, guid: 544d642be4cde164e9de03a043807582, type: 3}
+  - {fileID: -574379619, guid: 544d642be4cde164e9de03a043807582, type: 3}
+  - {fileID: 720038828, guid: 544d642be4cde164e9de03a043807582, type: 3}
+  - {fileID: -783757099, guid: 544d642be4cde164e9de03a043807582, type: 3}
+  maxLevelCount: 2
+  img_playerLevel:
+  - {fileID: 1987231557, guid: 544d642be4cde164e9de03a043807582, type: 3}
+  - {fileID: -803574677, guid: 544d642be4cde164e9de03a043807582, type: 3}
+  - {fileID: 1506654659, guid: 544d642be4cde164e9de03a043807582, type: 3}
+  - {fileID: -91806465, guid: 544d642be4cde164e9de03a043807582, type: 3}
+  playerSprite: {fileID: 2051035558}
+  obj_bulletLevel:
+  - {fileID: 649098831324623068, guid: 3508ac30d5e73e84a81bdb42a8b0898b, type: 3}
+  - {fileID: 1358406540413899448, guid: b88c2ef4bc691924c8cb0a06b5569fd1, type: 3}
+  - {fileID: 22299949930578661, guid: 8d17c3f49f2d1664c9a7a51f24e2798d, type: 3}
+  - {fileID: 5658309287545267531, guid: ee9adfdc245b6c74fb3b9e2ed5e65abc, type: 3}
+  ghostScreen: {fileID: 48366397}
 --- !u!1 &1600886344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2999,8 +3031,7 @@ MonoBehaviour:
   ghosting: 0
   ghostSoul: {fileID: 1171450092}
   ghostGauge: {fileID: 1829030205}
-  gaugeValueSecond: 0
-  bullet: {fileID: 22299949930578661, guid: 8d17c3f49f2d1664c9a7a51f24e2798d, type: 3}
+  bullet: {fileID: 649098831324623068, guid: 3508ac30d5e73e84a81bdb42a8b0898b, type: 3}
   gun: {fileID: 1507597786}
   shotPoint: {fileID: 419527339}
 --- !u!212 &2051035558

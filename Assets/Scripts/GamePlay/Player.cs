@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     [SerializeField] private bool ghosting;
     [SerializeField] private GameObject ghostSoul;
     [SerializeField] private Image ghostGauge;
-    [SerializeField] private float gaugeValueSecond;
     private GameObject enemy;
 
     [Header("Shot")]
