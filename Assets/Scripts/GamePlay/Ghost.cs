@@ -22,7 +22,6 @@ public class Ghost : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             enemy = collision.gameObject;
-            LevelUpManager.instance.GetSoul();
             player.SetEnemy(enemy);
         }
     }

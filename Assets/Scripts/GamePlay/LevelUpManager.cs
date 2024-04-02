@@ -10,6 +10,7 @@ public class LevelUpManager : MonoBehaviour
 
     [Header("SoulBox")]
     [SerializeField] private Image img_soulBox;
+    [SerializeField] private Image img_soulBoxBG;
     [SerializeField] private Sprite[] img_soulBoxLevel;
     [SerializeField] private int maxLevelCount;
     private int soulIndex;
@@ -34,6 +35,7 @@ public class LevelUpManager : MonoBehaviour
     {
         soulLevel = 0;
         img_soulBox.sprite = img_soulBoxLevel[0];
+        img_soulBoxBG.sprite = img_soulBoxLevel[0];
         playerSprite.sprite = img_playerLevel[0];
     }
 
@@ -41,7 +43,7 @@ public class LevelUpManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F1)) GetSoul();
 
-        img_soulBox.fillAmount = (float)soulIndex / maxLevelCount;
+        img_soulBox.fillAmount = Mathf.Lerp(img_soulBox.fillAmount, (float)soulIndex / maxLevelCount, 1f);
     }
 
     public void GetSoul()
@@ -53,6 +55,7 @@ public class LevelUpManager : MonoBehaviour
             soulIndex = 0;
             soulLevel++;
             img_soulBox.sprite = img_soulBoxLevel[soulLevel];
+            img_soulBoxBG.sprite = img_soulBoxLevel[soulLevel];
             playerSprite.sprite = img_playerLevel[soulLevel];
         }
     }
