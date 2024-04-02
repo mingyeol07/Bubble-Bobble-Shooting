@@ -283,9 +283,9 @@ GameObject:
   - component: {fileID: 1841356645875071041}
   - component: {fileID: 3874785758593952380}
   - component: {fileID: 6070463359692824760}
-  - component: {fileID: 8891283126948704555}
+  - component: {fileID: 194564517459755729}
   m_Layer: 8
-  m_Name: StopEnemy
+  m_Name: MoveEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8891283126948704555
+--- !u!114 &194564517459755729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,9 +352,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8380607625681611232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 445db4d0e60a011479ec6c3c1c208197, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c1f8c6fd7751aa48afc878ae2e024d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 649098831324623068, guid: f24971190dea3e346a8accb18bb79bad, type: 3}
-  warningImage: {fileID: 976181898374959831}
-  gun: {fileID: 1381059140327160339}
+  speed: 0

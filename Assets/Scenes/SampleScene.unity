@@ -1999,7 +1999,7 @@ MonoBehaviour:
   - {fileID: 245584345}
   - {fileID: 242024386}
   enemyPrefabs:
-  - {fileID: 8380607625681611232, guid: f324c0b27c4d79748b93dc85fdbfada0, type: 3}
+  - {fileID: 8380607625681611232, guid: 301f7be2df2fffc49aaecd3bbfd06dfb, type: 3}
 --- !u!4 &1217758138
 Transform:
   m_ObjectHideFlags: 0
