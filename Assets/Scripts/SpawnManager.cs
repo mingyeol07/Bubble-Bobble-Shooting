@@ -24,7 +24,7 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < spawnPoints.Length; i++)
         {
-            StraightSpawn(0, i);
+            StraightSpawn(Random.Range(0, enemyPrefabs.Length), i);
             yield return new WaitForSeconds(0.3f);
         }
     }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public CinemachineVirtualCamera virtualCamera;
     public Transform soulBoxPos;
 
+    public Transform player;
     [SerializeField] private RectTransform cursorPos;
 
     private void Awake()

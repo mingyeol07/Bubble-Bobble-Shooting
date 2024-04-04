@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemDrop : MonoBehaviour
 {
-    public Transform playerBag; // 플레이어의 가방 UI 위치
+    public Transform player; // 플레이어의 위치
     public float throwHeight = 2f; // 아이템이 던져질 높이
     public float throwDuration = 1.5f; // 던지는 동안의 시간
     private float power;
@@ -13,9 +13,7 @@ public class ItemDrop : MonoBehaviour
 
     private void Start()
     {
-        playerBag = GameManager.instance.soulBoxPos;
         startPos = transform.position;
-        endPos = playerBag.position;
         startTime = Time.time;
     }
 
@@ -26,6 +24,9 @@ public class ItemDrop : MonoBehaviour
 
     private void Update()
     {
+        player = GameManager.instance.player;
+        endPos = player.position;
+
         // 포물선 운동 계산
         float currentTime = Time.time - startTime;
         float ratio = currentTime / throwDuration;
