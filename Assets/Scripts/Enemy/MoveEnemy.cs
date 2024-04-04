@@ -44,8 +44,6 @@ public class MoveEnemy : MonoBehaviour
         yield return new WaitForSeconds(1f);
         warningImage.SetActive(false);
 
-        player = GameObject.FindWithTag("Player").transform;
-
         if (player != null) // 플레이어가 존재하면
         {
             // 플레이어 방향 계산
