@@ -18,7 +18,7 @@ public class Coordinates : MonoBehaviour
 
     public Vector2 GetCloseCoordinate(Vector2 circleVec, int closeCoordinateNumber)
     {
-        for (int i = closeCoordinateNumber - 1; i < coordinates.Length  i++)
+        for (int i = closeCoordinateNumber - 1; i < coordinates.Length;  i++)
         {
             x = circleVec.x - coordinates[i].transform.position.x;
             y = circleVec.y - coordinates[i].transform.position.y;
@@ -35,6 +35,6 @@ public class Coordinates : MonoBehaviour
 
     public Vector2 GetNumberCoordinate(int number)
     {
-
+        return coordinates[number].position;
     }
 }

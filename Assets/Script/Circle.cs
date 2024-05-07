@@ -7,11 +7,11 @@ using UnityEngine;
 public class Circle : MonoBehaviour
 {
     [SerializeField] private Circle otherCircle;
-    private int currentCoordinateNumber;
+    private int currentCoordinateNumber = 1;
 
-    private void PositionSet()
+    public void PositionSet()
     {
-        transform.position = Coordinates.Instance.GetCloseCoordinate(transform.position, otherCircle.currentCoordinateNumber);
+        transform.position = Coordinates.Instance.GetCloseCoordinate(transform.position, currentCoordinateNumber);
     }
 
     private void OnCollisionEnter(Collision collision)
