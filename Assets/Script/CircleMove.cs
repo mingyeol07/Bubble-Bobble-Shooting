@@ -5,15 +5,13 @@ using UnityEngine;
 public class CircleMove : MonoBehaviour
 {
     [SerializeField] private float speed;
-    Rigidbody2D rigid;
-    Vector2 velocity;
-    Circle circle;
+    private Rigidbody2D rigid;
+    private Vector2 velocity;
 
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         rigid.velocity = transform.up * speed;
-        circle = GetComponent<Circle>();
     }
 
     private void Update()
@@ -21,16 +19,19 @@ public class CircleMove : MonoBehaviour
         velocity = rigid.velocity;
     }
 
+    public void PositionSet()
+    {
+        transform.position = Coordinates.Instance.GetCloseCoordinate(transform.position);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Circle") || collision.gameObject.CompareTag("Ceiling"))
         {
-            Debug.Log("stop");
             rigid.velocity = Vector2.zero;
             Destroy(GetComponent<CircleMove>());
             Destroy(GetComponent<Rigidbody2D>());
-            circle.PositionSet();
-            
+            PositionSet();            
         }
 
         if (collision.gameObject.CompareTag("Wall"))

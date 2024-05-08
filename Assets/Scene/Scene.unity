@@ -3712,7 +3712,7 @@ MonoBehaviour:
   shotPosition: {fileID: 766326494}
   maxRotationAngle: 55
   minRotationAngle: -55
-  rotateSpeed: 0.5
+  rotateSpeed: 0.25
 --- !u!212 &672545916
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class Coordinates : MonoBehaviour
     public static Coordinates Instance;
 
     [SerializeField] private Transform[] coordinates;
+    private bool onCoordinate;
     private float x;
     private float y;
     private float distance;
@@ -16,22 +17,30 @@ public class Coordinates : MonoBehaviour
         Instance = this;
     }
 
-    public Vector2 GetCloseCoordinate(Vector2 circleVec, int closeCoordinateNumber)
+    /// <summary>
+    /// 나의 위치에서 가까운 좌표를 찾아내는 함수
+    /// </summary>
+    /// <param name="circleVec">나의 위치</param>
+    /// <returns></returns>
+    public Vector2 GetCloseCoordinate(Vector2 circleVec)
     {
-        for (int i = closeCoordinateNumber - 1; i < coordinates.Length;  i++)
-        {
-            x = circleVec.x - coordinates[i].transform.position.x;
-            y = circleVec.y - coordinates[i].transform.position.y;
-            distance = Mathf.Sqrt(x * x + y * y);
+        Vector2 closestCoordinate = Vector2.zero;
+        float shortestDistance = float.MaxValue;
 
-            if (distance < 0.75f)
+        for (int i = 0; i < coordinates.Length; i++)
+        {
+            float dist = Vector2.Distance(circleVec, coordinates[i].position);
+
+            if (dist < shortestDistance)
             {
-                return coordinates[i].position;
+                shortestDistance = dist;
+                closestCoordinate = coordinates[i].position;
             }
         }
 
-        return Vector2.zero;
+        return closestCoordinate;
     }
+
 
     public Vector2 GetNumberCoordinate(int number)
     {
