@@ -10,44 +10,43 @@ public class Shooter : MonoBehaviour
     [Header("Aim")]
     [SerializeField] private Transform shotPosition;
 
+    private CircleMove circle;
+
+    private bool isDrag;
+
     public float maxRotationAngle = 55f;
-    public float minRotationAngle = -55f;
-    public float rotateSpeed = 1f;
-
-    private float currentRotation = 0f;
-
-    private void Update()
-    {
-        Aim();
-        Shoot();
-    }
-
-    private void Aim()
-    {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            if (currentRotation > minRotationAngle)
-            {
-                currentRotation -= rotateSpeed;
-            }
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            if (currentRotation < maxRotationAngle)
-            {
-                currentRotation += rotateSpeed;
-            }
-        }
-
-        transform.rotation = Quaternion.Euler(0f, 0f, currentRotation);
-    }
 
     private void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+       
+         Instantiate(bullet, shotPosition.position, transform.rotation);
+        bullet.GetComponent<CircleMove>().StartShoot();
+    }
+
+    private void OnMouseDown()
+    {
+        isDrag = true;
+    }
+
+    private void OnMouseDrag()
+    {
+        if(isDrag)
         {
-            Instantiate(bullet, shotPosition.position, transform.rotation);
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mouseDistance = mousePos - (Vector2)transform.position;
+            float rotZ = Mathf.Atan2(mouseDistance.y, mouseDistance.x) * Mathf.Rad2Deg;
+
+            if(rotZ + 90 > -maxRotationAngle && rotZ + 90 < maxRotationAngle)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(rotZ + 90, -maxRotationAngle, maxRotationAngle));
+            }
+           
         }
+    }
+
+    private void OnMouseUp()
+    {
+        isDrag = false;
+        Shoot();
     }
 }

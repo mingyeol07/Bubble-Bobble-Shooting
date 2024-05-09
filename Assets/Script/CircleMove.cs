@@ -7,17 +7,20 @@ public class CircleMove : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D rigid;
     private Vector2 velocity;
-    private Collider2D[] circles;
     private Circle cricle;
 
     void Start()
     {
         cricle = GetComponent<Circle>();
         rigid = GetComponent<Rigidbody2D>();
+    }
+
+    public void StartShoot()
+    {
         rigid.velocity = transform.up * speed;
     }
 
-    private void Update()
+    void Update()
     {
         velocity = rigid.velocity;
     }
@@ -43,7 +46,7 @@ public class CircleMove : MonoBehaviour
 
     private IEnumerator Co_SetPosition()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         rigid.velocity = Vector2.zero;
         Destroy(GetComponent<CircleMove>());
         Destroy(GetComponent<Rigidbody2D>());

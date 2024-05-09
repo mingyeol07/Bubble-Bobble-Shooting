@@ -3605,6 +3605,7 @@ GameObject:
   - component: {fileID: 672545917}
   - component: {fileID: 672545916}
   - component: {fileID: 672545915}
+  - component: {fileID: 672545918}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -3627,8 +3628,6 @@ MonoBehaviour:
   bullet: {fileID: 9048607712817364851, guid: c2da6cb3f645b154fb77a1b016c9d24c, type: 3}
   shotPosition: {fileID: 766326494}
   maxRotationAngle: 55
-  minRotationAngle: -55
-  rotateSpeed: 0.25
 --- !u!212 &672545916
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3698,6 +3697,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &672545918
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672545914}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1 &756707740
 GameObject:
   m_ObjectHideFlags: 0
