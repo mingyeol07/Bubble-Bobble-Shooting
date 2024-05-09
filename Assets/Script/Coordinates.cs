@@ -7,14 +7,17 @@ public class Coordinates : MonoBehaviour
     public static Coordinates Instance;
 
     [SerializeField] private Transform[] coordinates;
-    private bool onCoordinate;
-    private float x;
-    private float y;
-    private float distance;
+    private Circle[] circles;
+    private int currentCircleNumber;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        circles = new Circle[coordinates.Length];
     }
 
     /// <summary>
@@ -22,7 +25,7 @@ public class Coordinates : MonoBehaviour
     /// </summary>
     /// <param name="circleVec">나의 위치</param>
     /// <returns></returns>
-    public Vector2 GetCloseCoordinate(Vector2 circleVec)
+    public Vector2 GetCloseCoordinate(Vector2 circleVec, Circle circle)
     {
         Vector2 closestCoordinate = Vector2.zero;
         float shortestDistance = float.MaxValue;
@@ -35,15 +38,37 @@ public class Coordinates : MonoBehaviour
             {
                 shortestDistance = dist;
                 closestCoordinate = coordinates[i].position;
+                currentCircleNumber = i;
             }
         }
+
+        circles[currentCircleNumber] = circle;
+        DisableCheckSameColorCircles();
 
         return closestCoordinate;
     }
 
-
-    public Vector2 GetNumberCoordinate(int number)
+    public void DisableCheckSameColorCircles()
     {
-        return coordinates[number].position;
+        DisableCircle(-7);
+        DisableCircle(-8);
+        DisableCircle(-1);
+        DisableCircle(+1);
+        DisableCircle(+7);
+        DisableCircle(+8);
+    }
+
+    private void DisableCircle(int plusNumber)
+    {
+        int checkNumber = currentCircleNumber + plusNumber;
+
+        if(checkNumber >= 0)
+        {
+            if (circles[checkNumber] != null && circles[currentCircleNumber].colorType == circles[currentCircleNumber].colorType)
+            {
+                circles[currentCircleNumber].CloseSameColor();
+                circles[checkNumber].CloseSameColor();
+            }
+        }
     }
 }

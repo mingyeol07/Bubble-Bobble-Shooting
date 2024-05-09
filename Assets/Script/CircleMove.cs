@@ -7,9 +7,12 @@ public class CircleMove : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D rigid;
     private Vector2 velocity;
+    private Collider2D[] circles;
+    private Circle cricle;
 
     void Start()
     {
+        cricle = GetComponent<Circle>();
         rigid = GetComponent<Rigidbody2D>();
         rigid.velocity = transform.up * speed;
     }
@@ -21,17 +24,14 @@ public class CircleMove : MonoBehaviour
 
     public void PositionSet()
     {
-        transform.position = Coordinates.Instance.GetCloseCoordinate(transform.position);
+        transform.position = Coordinates.Instance.GetCloseCoordinate(transform.position, cricle);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Circle") || collision.gameObject.CompareTag("Ceiling"))
         {
-            rigid.velocity = Vector2.zero;
-            Destroy(GetComponent<CircleMove>());
-            Destroy(GetComponent<Rigidbody2D>());
-            PositionSet();            
+            StartCoroutine(Co_SetPosition());
         }
 
         if (collision.gameObject.CompareTag("Wall"))
@@ -40,4 +40,14 @@ public class CircleMove : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(velocity.x, velocity.y) * Mathf.Rad2Deg, transform.forward);
         }
     }
+
+    private IEnumerator Co_SetPosition()
+    {
+        yield return new WaitForSeconds(0.1f);
+        rigid.velocity = Vector2.zero;
+        Destroy(GetComponent<CircleMove>());
+        Destroy(GetComponent<Rigidbody2D>());
+        PositionSet();
+    }
+
 }
