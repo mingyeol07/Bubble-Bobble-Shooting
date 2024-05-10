@@ -10,17 +10,18 @@ public class Shooter : MonoBehaviour
     [Header("Aim")]
     [SerializeField] private Transform shotPosition;
 
-    private CircleMove circle;
-
     private bool isDrag;
 
     public float maxRotationAngle = 55f;
 
     private void Shoot()
-    {
-       
-         Instantiate(bullet, shotPosition.position, transform.rotation);
-        bullet.GetComponent<CircleMove>().StartShoot();
+    { 
+        GameObject obj = CirclePoolManager.Instance.Spawn(ColorType.Blue);
+        obj.transform.position = shotPosition.position;
+        obj.transform.rotation = transform.rotation;//Instantiate(bullet, shotPosition.position, transform.rotation);
+        if (!obj.GetComponent<Rigidbody2D>()) obj.AddComponent<Rigidbody2D>().gravityScale = 0;
+        if (!obj.GetComponent<CircleMove>()) obj.AddComponent<CircleMove>();
+        obj.GetComponent<CircleMove>().StartShoot();
     }
 
     private void OnMouseDown()

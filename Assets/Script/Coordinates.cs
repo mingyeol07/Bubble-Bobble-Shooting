@@ -64,7 +64,7 @@ public class Coordinates : MonoBehaviour
 
         if(checkNumber >= 0)
         {
-            if (circles[checkNumber] != null && circles[currentCircleNumber].colorType == circles[currentCircleNumber].colorType)
+            if (circles[checkNumber] != null && circles[currentCircleNumber].color == circles[currentCircleNumber].color)
             {
                 circles[currentCircleNumber].CloseSameColor();
                 circles[checkNumber].CloseSameColor();

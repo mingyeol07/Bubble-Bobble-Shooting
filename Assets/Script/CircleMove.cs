@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CircleMove : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    private float speed = 10;
     private Rigidbody2D rigid;
     private Vector2 velocity;
     private Circle cricle;
+    private bool isMove;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class CircleMove : MonoBehaviour
 
     public void StartShoot()
     {
+        rigid = GetComponent<Rigidbody2D>();
         rigid.velocity = transform.up * speed;
     }
 
