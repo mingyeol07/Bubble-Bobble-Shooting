@@ -8,7 +8,6 @@ public class CircleMove : MonoBehaviour
     private Rigidbody2D rigid;
     private Vector2 velocity;
     private Circle cricle;
-    private bool isMove;
 
     void Start()
     {
@@ -25,11 +24,6 @@ public class CircleMove : MonoBehaviour
     void Update()
     {
         velocity = rigid.velocity;
-    }
-
-    public void PositionSet()
-    {
-        transform.position = Coordinates.Instance.GetCloseCoordinate(transform.position, cricle);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -52,7 +46,6 @@ public class CircleMove : MonoBehaviour
         rigid.velocity = Vector2.zero;
         Destroy(GetComponent<CircleMove>());
         Destroy(GetComponent<Rigidbody2D>());
-        PositionSet();
+        cricle.PositionSet();
     }
-
 }

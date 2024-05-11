@@ -4,10 +4,16 @@ public enum ColorType { Red, Green, Blue }
 
 public class Circle : MonoBehaviour
 {
-    public ColorType color;
+    public ColorType colorType;
+    public int number;
 
-    public void CloseSameColor()
+    public void DeSpawnCircle()
     {
-        CirclePoolManager.Instance.DeSpawn(color, gameObject);
+        if (gameObject != null) CirclePoolManager.Instance.DeSpawn(colorType, gameObject);
+    }
+
+    public void PositionSet()
+    {
+        if (gameObject != null) transform.position = Coordinates.Instance.GetCloseCoordinate(transform.position, this);
     }
 }

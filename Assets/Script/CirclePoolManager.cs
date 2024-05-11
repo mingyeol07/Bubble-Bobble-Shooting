@@ -18,76 +18,65 @@ public class CirclePoolManager : MonoBehaviour
 
     [SerializeField] private List<CircleData> circles;
 
-    private Dictionary<ColorType, GameObject> prefabDict;
     private Dictionary<ColorType, Stack<GameObject>> poolDict;
 
     private void Awake()
     {
         Instance = this;
-    }
-
-    private void Start()
-    {
         Initialize();
     }
 
     private void Initialize()
     {
-        int dictLength = circles.Count;
+        poolDict = new Dictionary<ColorType, Stack<GameObject>>();
 
-        prefabDict = new Dictionary<ColorType, GameObject>(dictLength);
-        poolDict = new Dictionary<ColorType, Stack<GameObject>>(dictLength);
-
-        foreach(var circle in circles)
+        foreach (var circleData in circles)
         {
-            Register(circle);
+            GameObject prefab = circleData.prefab;
+            Stack<GameObject> stack = new Stack<GameObject>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                GameObject go = Instantiate(prefab);
+                go.SetActive(false);
+                stack.Push(go);
+            }
+
+            poolDict.Add(circleData.color, stack);
         }
-    }
-
-    private void Register(CircleData circleData)
-    {
-        GameObject prefab = Instantiate(circleData.prefab);
-        prefab.SetActive(false);
-
-        Stack<GameObject> stack = new Stack<GameObject>();
-        for (int i = 0; i < 10; i++)
-        {
-            GameObject go = Instantiate(circleData.prefab);
-            stack.Push(go);
-        }
-
-        prefabDict.Add(circleData.color, prefab);
-        poolDict.Add(circleData.color, stack);
-    }
-
-    private GameObject Clone(ColorType color)
-    {
-        GameObject go = Instantiate(prefabDict[color]);
-        go.SetActive(false);
-        poolDict[color].Push(go);
-
-        return go;
     }
 
     public GameObject Spawn(ColorType color)
     {
-        if (poolDict[color].Contains(prefabDict[color]))
+        if (!poolDict.ContainsKey(color))
         {
-            return Clone(color);
+            Debug.LogWarning("No prefab found for color: " + color);
+            return null;
+        }
+       
+        GameObject go;
+        if (poolDict[color].Count == 0)
+        {
+            go = Instantiate(circles.Find(circle => circle.color == color).prefab);
+        }
+        else
+        {
+            go = poolDict[color].Pop();
         }
 
-        GameObject go = poolDict[color].Pop();
         go.SetActive(true);
-
         return go;
     }
 
     public void DeSpawn(ColorType color, GameObject go)
     {
-        if (!poolDict[color].Contains(go))
+        if (!poolDict.ContainsKey(color))
         {
-            go.SetActive(false);
-            poolDict[color].Push(go);
+            Debug.LogWarning("No prefab found for color: " + color);
+            return;
         }
+
+        go.SetActive(false);
+        poolDict[color].Push(go);
     }
 }
