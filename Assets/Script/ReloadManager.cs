@@ -49,6 +49,7 @@ public class ReloadManager : MonoBehaviour
         if(nextCircle != null) prevCircle = nextCircle;
         if (circleQueue.Count <= 1) RandomCircle();
         nextCircle = Instantiate(circleQueue.Dequeue());
+        nextCircle.GetComponent<Animator>().SetTrigger("Start");
     }
 
     public GameObject GetShootCircle()

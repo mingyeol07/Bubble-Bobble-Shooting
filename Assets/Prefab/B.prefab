@@ -140,6 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorType: 2
   index: 0
+  isMove: 0
 --- !u!114 &5047373726770583858
 MonoBehaviour:
   m_ObjectHideFlags: 0

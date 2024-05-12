@@ -74,7 +74,7 @@ public class Coordinates : MonoBehaviour
     {
         if (circleMap.ContainsKey(index))
         {
-            Destroy(circleMap[index]);
+            circleMap[index].Boom();
             circleMap.Remove(index);
         }
     }
