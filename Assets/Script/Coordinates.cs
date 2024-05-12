@@ -21,12 +21,12 @@ public class Coordinates : MonoBehaviour
     {
         int closestIndex = FindClosestIndex(circleVec);
         circleMap[closestIndex] = circle;
-        circle.number = closestIndex;
+        circle.index = closestIndex;
         CheckForSameColorCircles(closestIndex, circle.colorType);
         return coordinates[closestIndex].position;
     }
 
-    private void CheckForSameColorCircles(int currentIndex, ColorType circleColor)
+    public void CheckForSameColorCircles(int currentIndex, ColorType circleColor)
     {
         foreach (int offset in neighborOffsets)
         {
@@ -40,8 +40,8 @@ public class Coordinates : MonoBehaviour
                 {
                     if (circleMap[neighborIndex] != null)
                     {
+                        Debug.Log("dd");
                         ReMoveList(currentIndex);
-                        neighborCircle.DeSpawnCircle();
                     }
                 }
             }
@@ -74,7 +74,7 @@ public class Coordinates : MonoBehaviour
     {
         if (circleMap.ContainsKey(index))
         {
-            circleMap[index].DeSpawnCircle();
+            Destroy(circleMap[index]);
             circleMap.Remove(index);
         }
     }

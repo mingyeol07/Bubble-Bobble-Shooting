@@ -6,22 +6,35 @@ public class Shooter : MonoBehaviour
 {
     [Header("Bullet")]
     [SerializeField] private GameObject bullet;
-
     [Header("Aim")]
-    [SerializeField] private Transform shotPosition;
+    [SerializeField] private Transform shootPosition;
 
+    public GameObject circle;
     private bool isDrag;
-
     public float maxRotationAngle = 55f;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CircleSet();
+        }
+    }
+
     private void Shoot()
-    { 
-        GameObject obj = CirclePoolManager.Instance.Spawn(ColorType.Blue);
-        obj.transform.position = shotPosition.position;
-        obj.transform.rotation = transform.rotation;//Instantiate(bullet, shotPosition.position, transform.rotation);
-        if (!obj.GetComponent<Rigidbody2D>()) obj.AddComponent<Rigidbody2D>().gravityScale = 0;
-        if (!obj.GetComponent<CircleMove>()) obj.AddComponent<CircleMove>();
-        obj.GetComponent<CircleMove>().StartShoot();
+    {
+        if( circle !=  null && ReloadManager.Instance.reloadExit == true)
+        {
+            circle.GetComponent<CircleCollider2D>().enabled = true;
+            circle.GetComponent<CircleMove>().ShootStart(transform.up);
+            CircleSet();
+        }
+    }
+
+    public void CircleSet()
+    {
+        circle = ReloadManager.Instance.GetShootCircle();
+        circle.transform.position = shootPosition.position;
     }
 
     private void OnMouseDown()
@@ -33,15 +46,19 @@ public class Shooter : MonoBehaviour
     {
         if(isDrag)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mouseDistance = mousePos - (Vector2)transform.position;
-            float rotZ = Mathf.Atan2(mouseDistance.y, mouseDistance.x) * Mathf.Rad2Deg;
+            Pull();
+        }
+    }
 
-            if(rotZ + 90 > -maxRotationAngle && rotZ + 90 < maxRotationAngle)
-            {
-                transform.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(rotZ + 90, -maxRotationAngle, maxRotationAngle));
-            }
-           
+    private void Pull()
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mouseDistance = mousePos - (Vector2)transform.position;
+        float rotZ = Mathf.Atan2(mouseDistance.y, mouseDistance.x) * Mathf.Rad2Deg;
+
+        if (rotZ + 90 > -maxRotationAngle && rotZ + 90 < maxRotationAngle)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(rotZ + 90, -maxRotationAngle, maxRotationAngle));
         }
     }
 
