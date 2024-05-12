@@ -19,6 +19,11 @@ public class Circle : MonoBehaviour
         transform.position = Coordinates.Instance.GetCloseCoordinate(transform.position, this);
     }
 
+    public void CheckColor()
+    {
+        Coordinates.Instance.CheckForSameColorCircles(index, colorType);
+    }
+
     public void Boom()
     {
         animator.enabled = true;

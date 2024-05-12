@@ -10,7 +10,6 @@ public class Coordinates : MonoBehaviour
 
     [SerializeField] private Transform[] coordinates;
     private Dictionary<int, Circle> circleMap = new Dictionary<int, Circle>();
-    int[] neighborOffsets = { -7, -8, -1, 1, 7, 8 };
 
     private void Awake()
     {
@@ -22,12 +21,13 @@ public class Coordinates : MonoBehaviour
         int closestIndex = FindClosestIndex(circleVec);
         circleMap[closestIndex] = circle;
         circle.index = closestIndex;
-        CheckForSameColorCircles(closestIndex, circle.colorType);
         return coordinates[closestIndex].position;
     }
 
     public void CheckForSameColorCircles(int currentIndex, ColorType circleColor)
     {
+        int[] neighborOffsets = { -7, -8, -1, 1, 7, 8 };
+
         foreach (int offset in neighborOffsets)
         {
             int neighborIndex = currentIndex + offset;
@@ -40,8 +40,8 @@ public class Coordinates : MonoBehaviour
                 {
                     if (circleMap[neighborIndex] != null)
                     {
-                        Debug.Log("dd");
                         ReMoveList(currentIndex);
+                        ReMoveList(neighborIndex);
                     }
                 }
             }

@@ -7,17 +7,17 @@ public class CircleMove : MonoBehaviour
     private float speed = 10;
     private Rigidbody2D rigid;
     private Vector2 velocity;
-    private Circle cricle;
+    private Circle circle;
 
     private void Start()
     {
-        cricle = GetComponent<Circle>();
+        circle = GetComponent<Circle>();
         rigid = GetComponent<Rigidbody2D>();
     }
 
     public void ShootStart(Vector2 moveVec)
     {
-        cricle = GetComponent<Circle>();
+        circle = GetComponent<Circle>();
         rigid = GetComponent<Rigidbody2D>();
         rigid.velocity = moveVec * speed;
     }
@@ -29,9 +29,9 @@ public class CircleMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Circle") || collision.gameObject.CompareTag("Ceiling"))
+        if (collision.gameObject.CompareTag("Circle") || collision.gameObject.CompareTag("Ceiling"))
         {
-            StartCoroutine(Co_SetPosition());
+            StartCoroutine(Co_ColorCheck());
         }
 
         if (collision.gameObject.CompareTag("Wall"))
@@ -40,12 +40,18 @@ public class CircleMove : MonoBehaviour
         }
     }
 
-    private IEnumerator Co_SetPosition()
+    private IEnumerator Co_ColorCheck()
     {
         yield return new WaitForSeconds(0.05f);
+        SetPosition();
+        circle.CheckColor();
+    }
+
+    private void SetPosition()
+    {
         rigid.velocity = Vector2.zero;
         DestroyComponent();
-        cricle.PositionSet();
+        circle.PositionSet();
     }
 
     private void DestroyComponent()
