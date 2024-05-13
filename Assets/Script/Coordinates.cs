@@ -10,6 +10,8 @@ public class Coordinates : MonoBehaviour
 
     [SerializeField] private Transform[] coordinates;
     private Dictionary<int, Circle> circleMap = new Dictionary<int, Circle>();
+    private int[] neighborOffsets = { -7, -8, -1, 1, 7, 8 };
+    private HashSet<int> foundCircle = new HashSet<int>();
 
     private void Awake()
     {
@@ -26,7 +28,9 @@ public class Coordinates : MonoBehaviour
 
     public void CheckForSameColorCircles(int currentIndex, ColorType circleColor)
     {
-        int[] neighborOffsets = { -7, -8, -1, 1, 7, 8 };
+        int beforeFoundCircles = foundCircle.Count;
+        
+       
 
         foreach (int offset in neighborOffsets)
         {
@@ -38,14 +42,29 @@ public class Coordinates : MonoBehaviour
                 Circle neighborCircle = circleMap[neighborIndex];
                 if (neighborCircle.colorType == circleColor)
                 {
-                    if (circleMap[neighborIndex] != null)
+                    if (!foundCircle.Contains(neighborIndex)) // 이미 찾은 원이 아니라면
                     {
-                        ReMoveList(currentIndex);
-                        ReMoveList(neighborIndex);
+                        foundCircle.Add(neighborIndex); // foundCircle에 추가
+                        neighborCircle.CheckColor();
                     }
                 }
             }
         }
+
+        if (foundCircle.Count == beforeFoundCircles && foundCircle.Count > 0)
+        {
+            foundCircle.Add(currentIndex);
+            DestroyCircles();
+        }
+    }
+
+    public void DestroyCircles()
+    {
+        foreach (int index in foundCircle)
+        {
+            ReMoveList(index);
+        }
+        foundCircle.Clear(); // foundCircle 초기화
     }
 
     private int FindClosestIndex(Vector2 circleVec)
