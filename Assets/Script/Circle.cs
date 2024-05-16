@@ -17,12 +17,12 @@ public class Circle : MonoBehaviour
 
     public void PositionSet()
     {
-        transform.position = Coordinates.Instance.GetCloseCoordinate(transform.position, this);
+        transform.position = CoordinateManager.Instance.GetCloseCoordinate(transform.position, this);
     }
 
     public void CheckColor()
     {
-        Coordinates.Instance.CheckForSameColorCircles(index, colorType);
+        CoordinateManager.Instance.CheckForSameColorCircles(index, colorType);
     }
 
     public void Boom()
