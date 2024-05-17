@@ -1,13 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coordinate : MonoBehaviour
+[Serializable]
+public class Coordinate
 {
-    private Vector2 myCoordinate;
+    public Vector2Int coordinate;
+    public Vector2 coordinatePosition;
 
-    public void SetCoordinate(Vector2Int coordinate)
-    {
-        myCoordinate = coordinate;
-    }
+    public Circle circle;
 }
