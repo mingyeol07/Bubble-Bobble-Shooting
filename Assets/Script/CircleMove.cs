@@ -8,6 +8,7 @@ public class CircleMove : MonoBehaviour
     private Rigidbody2D rigid;
     private Vector2 velocity;
     private Circle circle;
+    private bool isStop = false;
 
     private void Start()
     {
@@ -31,7 +32,11 @@ public class CircleMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Circle") || collision.gameObject.CompareTag("Ceiling"))
         {
-            StartCoroutine(Co_ColorCheck());
+            if (!isStop)
+            {
+                isStop = true;
+                StartCoroutine(Co_ColorCheck());
+            }
         }
 
         if (collision.gameObject.CompareTag("Wall"))
@@ -44,7 +49,6 @@ public class CircleMove : MonoBehaviour
     {
         yield return new WaitForSeconds(0.05f);
         SetPosition();
-        circle.CheckColor();
     }
 
     private void SetPosition()
@@ -52,6 +56,7 @@ public class CircleMove : MonoBehaviour
         rigid.velocity = Vector2.zero;
         DestroyComponent();
         circle.PositionSet();
+        circle.CheckColor();
     }
 
     private void DestroyComponent()

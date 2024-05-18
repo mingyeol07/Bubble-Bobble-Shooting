@@ -11,7 +11,7 @@ public class CoordinateManager : MonoBehaviour
 
     [SerializeField] private CoordinateData[] coordinates;
     private Dictionary<Vector2Int, Circle> circleSaveDict = new Dictionary<Vector2Int, Circle>();
-    private List<Circle> foundedCircle = new List<Circle>();
+    private HashSet<Circle> foundedCircle = new HashSet<Circle>();
 
     const float evenX = -1.97f;
     const float oddX = -2.3f;
@@ -81,57 +81,63 @@ public class CoordinateManager : MonoBehaviour
 
     public void CheckCloseCoordinate(int x, int y, Circle centerCircle)
     {
-        Vector2Int[] closeVec =  { new Vector2Int(x, y - 1), new Vector2Int(x + 1, y - 1), new Vector2Int(x + 1, y)
-        , new Vector2Int(x + 1, y + 1), new Vector2Int(x, y + 1), new Vector2Int(x - 1, y)};
+        Vector2Int[] closeVec =  { new Vector2Int(x, y - 1), new Vector2Int(x + 1, y - 1), new Vector2Int(x + 1, y),
+                               new Vector2Int(x + 1, y + 1), new Vector2Int(x, y + 1), new Vector2Int(x - 1, y)};
 
-        
-        foundedCircle.Add(centerCircle);
+        if (!foundedCircle.Contains(centerCircle))
+            foundedCircle.Add(centerCircle);
+
+        int initialCount = foundedCircle.Count;
 
         foreach (Vector2Int coordinate in closeVec)
         {
-            if(circleSaveDict.ContainsKey(coordinate))
+            if (IsVaild(coordinate))
             {
-                Circle otherCircle = circleSaveDict[coordinate];
 
-                if (otherCircle.colorType == centerCircle.colorType)
+            }
+            else continue;
+
+            if (circleSaveDict.ContainsKey(coordinate))
+            {
+                Circle sameColorCircle = circleSaveDict[coordinate];
+
+                if (sameColorCircle.colorType == centerCircle.colorType)
                 {
-                    Debug.Log("Ãß°¡");
-                    if(!foundedCircle.Contains(otherCircle))
+                    if (!foundedCircle.Contains(sameColorCircle))
                     {
-                        CircleFound(otherCircle);
+                        foundedCircle.Add(sameColorCircle);
+                        sameColorCircle.CheckColor();
+                    }
+
+                    if (foundedCircle.Count == initialCount && foundedCircle.Count > 2)
+                    {
+                        foreach (Circle circle in foundedCircle)
+                        {
+                            Destroy(circle.gameObject);
+                            circleSaveDict.Remove(circle.myCoordinate);
+                        }
                     }
                 }
             }
         }
+
+        foundedCircle.Clear();
     }
 
-    private void CircleFound(Circle otherCircle)
+    private bool IsVaild(Vector2Int coordinate)
     {
-        int foundedCount = foundedCircle.Count;
-
-        foundedCircle.Add(otherCircle);
-
-        if (foundedCount == foundedCircle.Count && foundedCircle.Count > 2)
+        if(circleSaveDict.ContainsKey(coordinate))
         {
-            for(int i =0;  i  < foundedCount; i++)
-            {
-                Destroy(foundedCircle[i].gameObject);
-            }
-            return;
+            return true;
         }
+        return false;
     }
 
     public Vector2 GetCloseCoordinatePos(Vector2 circleVec, Circle circle)
     {
         FindCloseCoordinate(circleVec, out CoordinateData closeCoordinate);
-        if (!circleSaveDict.ContainsKey(closeCoordinate.coordinate))
-        {
-            circleSaveDict.Add(closeCoordinate.coordinate, circle);
-        }
-        else
-        {
-            circleSaveDict[closeCoordinate.coordinate] = circle;
-        }
+        circleSaveDict.Add(closeCoordinate.coordinate, circle);
+        circle.myCoordinate = closeCoordinate.coordinate;
         return closeCoordinate.coordinatePosition;
     }
 
@@ -142,10 +148,10 @@ public class CoordinateManager : MonoBehaviour
 
         for (int i = 0; i < coordinates.Length; i++)
         {
-            float dist = Vector2.Distance(circleVec, coordinates[i].coordinatePosition);
-            if (dist < shortestDistance)
+            float distance = Vector2.Distance(circleVec, coordinates[i].coordinatePosition);
+            if (distance < shortestDistance)
             {
-                shortestDistance = dist;
+                shortestDistance = distance;
                 closeCoordinate = coordinates[i];
             }
         }
