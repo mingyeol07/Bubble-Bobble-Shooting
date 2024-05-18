@@ -6,7 +6,7 @@ public enum ColorType { Red, Green, Blue }
 public class Circle : MonoBehaviour
 {
     public ColorType colorType;
-    public Coordinate myCoordinate;
+  //  public CoordinateData myCoordinate;
     private Animator animator;
 
     private void Awake()
@@ -16,11 +16,12 @@ public class Circle : MonoBehaviour
 
     public void PositionSet()
     {
-        transform.position = CoordinateManager.Instance.GetCloseCoordinate(transform.position, this);
+        transform.position = CoordinateManager.Instance.GetCloseCoordinatePos(transform.position, this);
     }
 
     public void CheckColor()
     {
+        //CoordinateManager.Instance.CheckCloseCoordinate(transform.position.x, transform.posiiton.y, this);
         //CoordinateManager.Instance.CheckForSameColorCircles(myCoordinate, colorType);
     }
 

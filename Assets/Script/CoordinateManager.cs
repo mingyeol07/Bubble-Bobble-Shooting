@@ -9,12 +9,10 @@ public class CoordinateManager : MonoBehaviour
 {
     public static CoordinateManager Instance;
 
-    private Dictionary<int, Circle> circleMap = new Dictionary<int, Circle>();
-    private int[] neighborOffsets = { -7, -8, -1, 1, 7, 8 };
-    private HashSet<int> foundCircle = new HashSet<int>();
+    [SerializeField] private CoordinateData[] coordinates;
+    private Dictionary<Vector2Int, Circle> circleSaveDict = new Dictionary<Vector2Int, Circle>();
+    private List<Circle> foundedCircle = new List<Circle>();
 
-    [SerializeField] private Coordinate[] coordinates;
-    private Dictionary<Coordinate, Circle> circleSaveDict;
     const float evenX = -1.97f;
     const float oddX = -2.3f;
 
@@ -27,6 +25,13 @@ public class CoordinateManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        Initialization();
+    }
+
+    private void Initialization()
+    {
+        coordinates = new CoordinateData[105];
+
         InitCoordinate();
         InitCoordinatePosition();
     }
@@ -42,6 +47,7 @@ public class CoordinateManager : MonoBehaviour
 
             for (int j = 0; j < allocCnt; j++)
             {
+                coordinates[index] = new CoordinateData();
                 Vector2Int coordinateIndex = new Vector2Int(j, i);
                 coordinates[index].coordinate = coordinateIndex;
                 index++;
@@ -73,102 +79,65 @@ public class CoordinateManager : MonoBehaviour
         }
     }
 
-    private void CheckCloseCoordinate(int x, int y, ColorType circleColor)
+    public void CheckCloseCoordinate(int x, int y, Circle centerCircle)
     {
         Vector2Int[] closeVec =  { new Vector2Int(x, y - 1), new Vector2Int(x + 1, y - 1), new Vector2Int(x + 1, y)
         , new Vector2Int(x + 1, y + 1), new Vector2Int(x, y + 1), new Vector2Int(x - 1, y)};
 
-        int beforeFoundCircles = foundCircle.Count;
+        
+        foundedCircle.Add(centerCircle);
 
-        for (int i = 0; i < closeVec.Length; i++)
+        foreach (Vector2Int coordinate in closeVec)
         {
-            foreach(Coordinate coordinate in coordinates)
+            if(circleSaveDict.ContainsKey(coordinate))
             {
-                if (closeVec[i].Equals(coordinate))
+                Circle otherCircle = circleSaveDict[coordinate];
+
+                if (otherCircle.colorType == centerCircle.colorType)
                 {
-                    coordinate.circle = circleSaveDict[coordinate];
-                    if(coordinate.circle.colorType == circleColor)
+                    Debug.Log("추가");
+                    if(!foundedCircle.Contains(otherCircle))
                     {
-                        
+                        CircleFound(otherCircle);
                     }
                 }
             }
         }
     }
 
-    public Vector2 GetCloseCoordinate(Vector2 circleVec, Circle circle)
+    private void CircleFound(Circle otherCircle)
     {
-        Coordinate closeCoordinate = FindCloseCoordinate(circleVec);
-        circleSaveDict[closeCoordinate] = circle;
-        circle.myCoordinate = closeCoordinate;
+        int foundedCount = foundedCircle.Count;
 
+        foundedCircle.Add(otherCircle);
+
+        if (foundedCount == foundedCircle.Count && foundedCircle.Count > 2)
+        {
+            for(int i =0;  i  < foundedCount; i++)
+            {
+                Destroy(foundedCircle[i].gameObject);
+            }
+            return;
+        }
+    }
+
+    public Vector2 GetCloseCoordinatePos(Vector2 circleVec, Circle circle)
+    {
+        FindCloseCoordinate(circleVec, out CoordinateData closeCoordinate);
+        if (!circleSaveDict.ContainsKey(closeCoordinate.coordinate))
+        {
+            circleSaveDict.Add(closeCoordinate.coordinate, circle);
+        }
+        else
+        {
+            circleSaveDict[closeCoordinate.coordinate] = circle;
+        }
         return closeCoordinate.coordinatePosition;
     }
 
-    public void CheckForSameColorCircle(Coordinate currentCoordinate, ColorType circleColor)
+    private void FindCloseCoordinate(Vector2 circleVec, out CoordinateData coordinate)
     {
-        if(currentCoordinate.circle.colorType == circleColor)
-        {
-
-        }
-
-        int beforeFoundCircles = foundCircle.Count;
-        
-        foreach (int offset in neighborOffsets)
-        {
-            int neighborIndex = 1;// currentIndex + offset;
-            if (IsValidIndex(neighborIndex) && circleMap.ContainsKey(neighborIndex))
-            {
-                if (circleMap[neighborIndex] == null) continue;
-
-                Circle neighborCircle = circleMap[neighborIndex];
-                if (neighborCircle.colorType == circleColor)
-                {
-                    if (!foundCircle.Contains(neighborIndex)) // 이미 찾은 원이 아니라면
-                    {
-                        foundCircle.Add(neighborIndex); // foundCircle에 추가
-                        neighborCircle.CheckColor();
-                    }
-                }
-            }
-        }
-
-        if (foundCircle.Count == beforeFoundCircles && foundCircle.Count > 0)
-        {
-           // foundCircle.Add(currentIndex);
-            DestroyCircles();
-        }
-    }
-
-    public void DestroyCircles()
-    {
-        foreach (int index in foundCircle)
-        {
-            ReMoveList(index);
-        }
-        foundCircle.Clear(); // foundCircle 초기화
-    }
-
-    private int FindClosestIndex(Vector2 circleVec)
-    {
-        int closestIndex = -1;
-        float shortestDistance = float.MaxValue;
-
-        for (int i = 0; i < coordinates.Length; i++)
-        {
-            float dist = Vector2.Distance(circleVec, coordinates[i].coordinatePosition);
-            if (dist < shortestDistance)
-            {
-                shortestDistance = dist;
-                closestIndex = i;
-            }
-        }
-        return closestIndex;
-    }
-
-    private Coordinate FindCloseCoordinate(Vector2 circleVec)
-    {
-        Coordinate closeCoordinate = null;
+        CoordinateData closeCoordinate = null;
         float shortestDistance = float.MaxValue;
 
         for (int i = 0; i < coordinates.Length; i++)
@@ -181,20 +150,6 @@ public class CoordinateManager : MonoBehaviour
             }
         }
 
-        return closeCoordinate;
-    }
-
-    private bool IsValidIndex(int index)
-    {
-        return index >= 0 && index < coordinates.Length;
-    }
-
-    public void ReMoveList(int index)
-    {
-        if (circleMap.ContainsKey(index))
-        {
-            circleMap[index].Boom();
-            circleMap.Remove(index);
-        }
+        coordinate = closeCoordinate;
     }
 }
