@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public enum ColorType { Blue, Green, Red }
@@ -9,7 +9,7 @@ public class Circle : MonoBehaviour
     public Vector2Int myCoordinate;
     private Animator animator;
 
-    private void Awake()
+    private void Start()
     {
         animator = GetComponent<Animator>();
     }
@@ -26,9 +26,24 @@ public class Circle : MonoBehaviour
 
     public void Boom()
     {
+        animator = GetComponent<Animator>();
         animator.enabled = true;
         animator.applyRootMotion = true;
         animator.SetTrigger("Boom");
+    }
+
+    public void Fall()
+    {
+        animator.enabled = false;
+        gameObject.AddComponent<Rigidbody2D>().gravityScale = 1.0f;
+
+        StartCoroutine(FallExit());
+    }
+
+    IEnumerator FallExit()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 
     private void BoomAnimExit()

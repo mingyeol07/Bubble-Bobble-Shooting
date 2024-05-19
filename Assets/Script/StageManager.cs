@@ -33,7 +33,7 @@ public class StageManager : MonoBehaviour
 
     private void SetCircle(int x, int y, int color)
     {
-       GameObject go = Instantiate(circles[color], CoordinateManager.Instance.GetPositionToCoordinate(new Vector2Int(x, y)), Quaternion.identity);
+        GameObject go = Instantiate(circles[color], CoordinateManager.Instance.GetPositionToCoordinate(new Vector2Int(x, y)), Quaternion.identity);
         go.GetComponent<Circle>().SetPosition();
         go.GetComponent<CircleCollider2D>().enabled = true;
     }
