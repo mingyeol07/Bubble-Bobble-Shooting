@@ -35,8 +35,15 @@ public class Circle : MonoBehaviour
     public void Fall()
     {
         animator.enabled = false;
-        gameObject.AddComponent<Rigidbody2D>().gravityScale = 1.0f;
-
+        if(gameObject.GetComponent<Rigidbody2D>() == null )
+        {
+            gameObject.AddComponent<Rigidbody2D>().gravityScale = 1.0f;
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+        }
+        
         StartCoroutine(FallExit());
     }
 
