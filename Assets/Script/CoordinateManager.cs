@@ -3,15 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CoordinateManager : MonoBehaviour
 {
     public static CoordinateManager Instance;
 
-    [SerializeField] private CoordinateData[] coordinates;
+    public CoordinateData[] coordinates;
     private Dictionary<Vector2Int, Circle> circleSaveDict = new Dictionary<Vector2Int, Circle>();
-    private HashSet<Circle> foundedCircle = new HashSet<Circle>();
+    /// <summary>
+    /// 누적된 Cricle들을 담는 변수
+    /// </summary>
+    private Stack<Circle> foundedCircles = new Stack<Circle>();
 
     const float evenX = -1.97f;
     const float oddX = -2.3f;
@@ -79,64 +83,93 @@ public class CoordinateManager : MonoBehaviour
         }
     }
 
-    public void CheckCloseCoordinate(int x, int y, Circle centerCircle)
+    public void CheckCloseCoordinate(Circle centerCircle)
     {
-        Vector2Int[] closeVec =  { new Vector2Int(x, y - 1), new Vector2Int(x + 1, y - 1), new Vector2Int(x + 1, y),
-                               new Vector2Int(x + 1, y + 1), new Vector2Int(x, y + 1), new Vector2Int(x - 1, y)};
+        Stack<Circle> coordinateStack = new Stack<Circle>();
+        coordinateStack.Push(centerCircle);
 
-        if (!foundedCircle.Contains(centerCircle))
-            foundedCircle.Add(centerCircle);
-
-        int initialCount = foundedCircle.Count;
-
-        foreach (Vector2Int coordinate in closeVec)
+        while (coordinateStack.Count > 0)
         {
-            if (IsVaild(coordinate))
-            {
+            Circle circle = coordinateStack.Pop();
+            int CoordX = circle.myCoordinate.x;
+            int CoordY = circle.myCoordinate.y;
 
+            bool isOdd = (CoordY + 1) % 2 != 0;
+            Vector2Int[] closeCircleVec = new Vector2Int[6];
+
+            Debug.Log(isOdd);
+
+            if (!isOdd)
+            {
+                closeCircleVec = new Vector2Int[6] { new Vector2Int(CoordX, CoordY - 1), new Vector2Int(CoordX + 1, CoordY - 1), new Vector2Int(CoordX + 1, CoordY),
+                               new Vector2Int(CoordX + 1, CoordY + 1), new Vector2Int(CoordX, CoordY + 1), new Vector2Int(CoordX - 1, CoordY)};
             }
-            else continue;
-
-            if (circleSaveDict.ContainsKey(coordinate))
+           else
             {
-                Circle sameColorCircle = circleSaveDict[coordinate];
+                closeCircleVec = new Vector2Int[6]  { new Vector2Int(CoordX - 1, CoordY - 1), new Vector2Int(CoordX, CoordY - 1), new Vector2Int(CoordX + 1, CoordY),
+                               new Vector2Int(CoordX, CoordY + 1), new Vector2Int(CoordX - 1, CoordY + 1), new Vector2Int(CoordX - 1, CoordY)};
+            }
 
-                if (sameColorCircle.colorType == centerCircle.colorType)
+            foreach (Vector2Int closeCircleCoordinate in closeCircleVec)
+            {
+                if (IsValid(closeCircleCoordinate, out Circle sameColorCircle, circle.colorType))
                 {
-                    if (!foundedCircle.Contains(sameColorCircle))
-                    {
-                        foundedCircle.Add(sameColorCircle);
-                        sameColorCircle.CheckColor();
-                    }
+                    foundedCircles.Push(sameColorCircle);
+                    coordinateStack.Push(sameColorCircle);
 
-                    if (foundedCircle.Count == initialCount && foundedCircle.Count > 2)
-                    {
-                        foreach (Circle circle in foundedCircle)
-                        {
-                            Destroy(circle.gameObject);
-                            circleSaveDict.Remove(circle.myCoordinate);
-                        }
-                    }
+                    Debug.Log(sameColorCircle.myCoordinate);
                 }
             }
         }
 
-        foundedCircle.Clear();
+        if (foundedCircles.Count > 2)
+        {
+            ExecuteBoomOnCircles();
+        }
+        else
+        {
+            foundedCircles.Clear();
+        }
     }
 
-    private bool IsVaild(Vector2Int coordinate)
+    private bool IsValid(Vector2Int coordinate, out Circle sameColorCircle, ColorType colorType)
     {
         if(circleSaveDict.ContainsKey(coordinate))
         {
-            return true;
+            sameColorCircle = circleSaveDict[coordinate];
+            if (!foundedCircles.Contains(sameColorCircle) && sameColorCircle.colorType == colorType)
+            {
+                return true;
+            }
         }
+
+        sameColorCircle = null;
         return false;
+    }
+
+    private void ExecuteBoomOnCircles()
+    {
+        while (foundedCircles.Count > 0 )
+        {
+            Circle circle = foundedCircles.Pop();
+            circle.Boom();
+            circleSaveDict.Remove(circle.myCoordinate);
+        }
+        foundedCircles.Clear();
     }
 
     public Vector2 GetCloseCoordinatePos(Vector2 circleVec, Circle circle)
     {
         FindCloseCoordinate(circleVec, out CoordinateData closeCoordinate);
-        circleSaveDict.Add(closeCoordinate.coordinate, circle);
+        if(!circleSaveDict.ContainsKey(closeCoordinate.coordinate))
+        {
+            circleSaveDict.Add(closeCoordinate.coordinate, circle);
+        }
+        else
+        {
+            circleSaveDict[closeCoordinate.coordinate] = circle;
+        }
+       
         circle.myCoordinate = closeCoordinate.coordinate;
         return closeCoordinate.coordinatePosition;
     }
@@ -157,5 +190,19 @@ public class CoordinateManager : MonoBehaviour
         }
 
         coordinate = closeCoordinate;
+    }
+
+    public Vector3 GetPositionToCoordinate(Vector2Int coordinate)
+    {
+        for (int i = 0; i<coordinates.Length; i++)
+        {
+            if(coordinates[i].coordinate == coordinate)
+            {
+                Debug.Log(coordinates[i].coordinatePosition);
+                return coordinates[i].coordinatePosition;
+            }
+        }
+
+        return Vector2.zero;
     }
 }

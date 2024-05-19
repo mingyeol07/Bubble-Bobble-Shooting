@@ -55,7 +55,7 @@ public class CircleMove : MonoBehaviour
     {
         rigid.velocity = Vector2.zero;
         DestroyComponent();
-        circle.PositionSet();
+        circle.SetPosition();
         circle.CheckColor();
     }
 

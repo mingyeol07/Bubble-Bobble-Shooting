@@ -23,10 +23,10 @@ public class Shooter : MonoBehaviour
 
     private void Shoot()
     {
-        if( circle !=  null && ReloadManager.Instance.reloadExit == true)
+        if(circle !=  null && ReloadManager.Instance.reloadExit == true)
         {
             circle.GetComponent<CircleCollider2D>().enabled = true;
-            circle.GetComponent<CircleMove>().ShootStart(transform.up);
+            circle.AddComponent<CircleMove>().ShootStart(transform.up);
             CircleSet();
         }
     }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ColorType { Red, Green, Blue }
+public enum ColorType { Blue, Green, Red }
 
 public class Circle : MonoBehaviour
 {
@@ -14,15 +14,14 @@ public class Circle : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void PositionSet()
+    public void SetPosition()
     {
         transform.position = CoordinateManager.Instance.GetCloseCoordinatePos(transform.position, this);
     }
 
     public void CheckColor()
     {
-        CoordinateManager.Instance.CheckCloseCoordinate(myCoordinate.x, myCoordinate.y, this);
-        //CoordinateManager.Instance.CheckForSameColorCircles(myCoordinate, colorType);
+        CoordinateManager.Instance.CheckCloseCoordinate(this);
     }
 
     public void Boom()
