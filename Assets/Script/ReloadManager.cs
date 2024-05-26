@@ -12,6 +12,9 @@ public class ReloadManager : MonoBehaviour
 
     private GameObject nextCircle;
     private GameObject prevCircle;
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform startPos;
+    [SerializeField] private Transform reloadPos;
 
     public bool reloadExit = false;
 
@@ -50,6 +53,7 @@ public class ReloadManager : MonoBehaviour
         if (circleQueue.Count <= 1) RandomCircle();
         nextCircle = Instantiate(circleQueue.Dequeue());
         nextCircle.GetComponent<Animator>().SetTrigger("Start");
+        nextCircle.transform.parent = player;
     }
 
     public GameObject GetShootCircle()
@@ -59,7 +63,7 @@ public class ReloadManager : MonoBehaviour
         GameObject circle = prevCircle;
         reloadExit = false;
         circle.GetComponent<Animator>().SetTrigger("Reload");
-
+        circle.transform.position = reloadPos.position;
         return circle;
     }
 

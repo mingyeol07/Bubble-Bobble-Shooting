@@ -28,6 +28,7 @@ public class Circle : MonoBehaviour
     public void Fall()
     {
         animator.enabled = false;
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
         if(gameObject.GetComponent<Rigidbody2D>() == null )
         {
             gameObject.AddComponent<Rigidbody2D>().gravityScale = 1.0f;
@@ -63,7 +64,6 @@ public class Circle : MonoBehaviour
 
     public void ReloadExit()
     {
-        animator.enabled = false;
         ReloadManager.Instance.ReloadExit();
     }
 }

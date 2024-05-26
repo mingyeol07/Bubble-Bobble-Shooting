@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    [Header("Bullet")]
-    [SerializeField] private GameObject bullet;
-    [Header("Aim")]
-    [SerializeField] private Transform shootPosition;
+    [SerializeField] private Transform arrow;
 
     public GameObject circle;
     private bool isDrag;
@@ -26,7 +23,11 @@ public class Shooter : MonoBehaviour
         if(circle !=  null && ReloadManager.Instance.reloadExit == true)
         {
             circle.GetComponent<CircleCollider2D>().enabled = true;
-            circle.AddComponent<CircleMove>().ShootStart(transform.up);
+            circle.GetComponent<Animator>().enabled = false;
+            circle.transform.parent = null;
+          
+            circle.AddComponent<CircleMove>().ShootStart(arrow.transform.up);
+            
             CircleSet();
         }
     }
@@ -34,7 +35,6 @@ public class Shooter : MonoBehaviour
     public void CircleSet()
     {
         circle = ReloadManager.Instance.GetShootCircle();
-        circle.transform.position = shootPosition.position;
     }
 
     private void OnMouseDown()
@@ -58,7 +58,7 @@ public class Shooter : MonoBehaviour
 
         if (rotZ + 90 > -maxRotationAngle && rotZ + 90 < maxRotationAngle)
         {
-            transform.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(rotZ + 90, -maxRotationAngle, maxRotationAngle));
+            arrow.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(rotZ + 90, -maxRotationAngle, maxRotationAngle));
         }
     }
 
