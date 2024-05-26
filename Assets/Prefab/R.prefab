@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorType: 0
   myCoordinate: {x: 0, y: 0}
+  enemy: {fileID: 7697465941930682234, guid: cb351655da890ce459e68830c9701de7, type: 3}
 --- !u!95 &3390698825131630262
 Animator:
   serializedVersion: 5

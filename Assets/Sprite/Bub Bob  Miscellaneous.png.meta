@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 22
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,7 +115,2863 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_0
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 380
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92883703abf41d408237c253a9864c9
+      internalID: 976435918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_1
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 380
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac00771f07edba41b9040cbffa49b67
+      internalID: 2114812272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_2
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 380
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0224afeb3191f2042b7de584e81bd6de
+      internalID: 869888239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_3
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 380
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113921ee082093241bfcd26d57ff5516
+      internalID: 1247992093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_4
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 380
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a3f26326abc434ab834111d51d7a61
+      internalID: 1121350237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_5
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 380
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf0ca18c3d888b45990b24022e01633
+      internalID: -565106987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_6
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 380
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551ac89bae76c49458eb0cd879a92232
+      internalID: -1910144731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_7
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 380
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d434479a6b944d43a66ec834676a5c2
+      internalID: -1425836948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_8
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 360
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e5d676d5515e145bd21604c59115fa
+      internalID: -1792268202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_9
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 360
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c623725bb90d814b89349e6dfff5db1
+      internalID: -214247847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_10
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 360
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ffad1d1cc7c834db029bb62f8cbc8a
+      internalID: 1668884333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_11
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 360
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b577ffafdbc04445a7b4e461385938c
+      internalID: -987832102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_12
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 360
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f054439c29f60042b0aeb8c460e31ba
+      internalID: -1253749726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_13
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 360
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cae2008ea300ea46a9d3214c086f4a5
+      internalID: -902347708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_14
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 360
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1309f38ebf9c1da4dab4d0e222062ac3
+      internalID: -402122715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_15
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 360
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f29cd52ab78eb749a8d1270a56f9ca3
+      internalID: -132248221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_16
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 340
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f415f96468032f94f963773f091c23b6
+      internalID: -1081510826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_17
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 340
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5ceb1dda8f6f1409e075555c9a184b
+      internalID: -1566967563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_18
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 340
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58fa688c0027f549b5528254e8132ae
+      internalID: -2082159145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_19
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 340
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8434dc0cb798b4c8f472040090eb95
+      internalID: -1010458171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_20
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 340
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a1db455ca4595459db18823ffcaf53
+      internalID: 704473382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_21
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 340
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921c603211dff9240997db0d66c282f3
+      internalID: -1013134414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_22
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 340
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0102a16bd9026641a1320846e17a102
+      internalID: -637218382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_23
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 340
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d90186e23ccb04296580325a13f348
+      internalID: -582517705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_24
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 320
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666257187712610419e9ffbb0cc630b6
+      internalID: -1551490492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_25
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 320
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0ff13f19030eb043a0d444e777a7795
+      internalID: 1455395536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_26
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 320
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53624d75277392478188ac13c2c0f31
+      internalID: 894056585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_27
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 320
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13410f2a86c3f2d4fbef6afeec341dbf
+      internalID: 1368034840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_28
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 320
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de69f61789516442a892859fcccf7a4
+      internalID: -244874109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_29
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 320
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6e1c573c01b0c4fba063f853d91090
+      internalID: -666702087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_30
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 320
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ab04fd392d2994b972f6099c94d826
+      internalID: 230604070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_31
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 320
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8d6c1e3f4e68642b0575c77895a064
+      internalID: 253273475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_32
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 280
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c736b946af2d24f98352c1e76f3d98
+      internalID: 37393358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_33
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 280
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf635d2d092999242a25cb2e8d3dde0d
+      internalID: 313190510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_34
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 260
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f98cb7a8e863d4d8c1b716a593146e
+      internalID: -1523895584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_35
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 260
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab7b5a73b8a8e04daf4baefa78daa8b
+      internalID: -180378847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_36
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 260
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a99f6fc461f01244addf15d9283761e
+      internalID: -1120995247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_37
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 260
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc6842eadbf86a4caa5e3fcd161accf
+      internalID: -2132423852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_38
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 240
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bf76a434b2aad4d987e792d5e6dc07
+      internalID: -1265703902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_39
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 240
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b8a57f10577364e9191938e2ba5d8f
+      internalID: 769697211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_40
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 240
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1918027a6dcbc2744889305f60f315a7
+      internalID: -405820791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_41
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 240
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa6bcf03056c21439488a7db46599e2
+      internalID: -729410106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_42
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 240
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48fdeffe6f35db4ea2f42860d73ebec
+      internalID: -1781394185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_43
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 240
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c637f7483b1ba49a451d3fe046037c
+      internalID: -551032053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_44
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 220
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cfdbf14dd523e42a123f617d416070
+      internalID: 558741347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_45
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 220
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153800af1df43964bae47e88092c4534
+      internalID: -436496357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_46
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 220
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0046d311c353a004d9537b25ececa638
+      internalID: 1532353811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_47
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 220
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601f6ad9b10b0354e848a218ace12e8e
+      internalID: -1021424999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_48
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 220
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2941ba81bfe25b14d9bf52b2016cc678
+      internalID: 1281162320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_49
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 220
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad96423c8b2c38045a8b25a4651795cf
+      internalID: 298134413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_50
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d1161fbcf5ca344bf95347ed86862f
+      internalID: 496364618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_51
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ed356d03c87b942aef584372846691
+      internalID: 114800245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_52
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f909812f8801bc47a709d62dc1d6fe0
+      internalID: -921270656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_53
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4d55bad364e84409f74f0085ca550f
+      internalID: -27325367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_54
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c7c04c076f3ab4baa7ac19b28a2473
+      internalID: -960063209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_55
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c1bbd367c2dac429985c83f0420ef8
+      internalID: 322905818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_56
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd7ab39ecba23748bde49e697e6af28
+      internalID: 1328427630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_57
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ae802e6545dde4f8ce4457d9c112b0
+      internalID: 1780544574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_58
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a47d403843b91a49a5652004e2f0156
+      internalID: -1582019572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_59
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9cbc48033ac3042848342027438092
+      internalID: 274658969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_60
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62e8349d93eb2b4da39347974956201
+      internalID: 120581192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_61
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6067739fb5306834cb11ffaa7871a522
+      internalID: 53891406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_62
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 762ec28c24c7d5e4a82a0c399fe7f779
+      internalID: 1782211226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_63
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135397537c0184848b1d795a528b4685
+      internalID: -1542775065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_64
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce7480203765334c973a3f410e5a753
+      internalID: 1471045991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_65
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a3bdb218860414aaae44995a5f5103
+      internalID: -1245964093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_66
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b59063332807c8942b50d40a3639f626
+      internalID: -383352404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_67
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26517be6b4d7e4345b58ffc463977219
+      internalID: -884269794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_68
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29157e0bf472f8b43ac4d2bb72670563
+      internalID: 321451005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_69
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45a639047a1640f4cb709d56c5fc7c74
+      internalID: 231096483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_70
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6b8d8395d996d4981057b6167d0120
+      internalID: 1405980013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_71
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74fdb06c8d192143b3fce744c4eadf5
+      internalID: -1719967856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_72
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e2bc9752a5dd7479009178e5097770
+      internalID: 1348622711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_73
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515ce18a1d593244180d858a492c3a8b
+      internalID: 1733579993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_74
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863a93ab7f97be441b7148e57bd0bb65
+      internalID: -2107883987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_75
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c798bc8e927b47d47a31606f04c8c7dd
+      internalID: 1285154318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_76
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e5ce130c51bf04ab419f28b07ded77
+      internalID: -487306131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_77
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070053c8e0edf234a947d0399f45d6c3
+      internalID: 64947957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_78
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1681421ab535dcd49ae9170d6f920232
+      internalID: -2146605987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_79
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c97956bbd60e78459df131cc17238b1
+      internalID: -657146663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_80
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eaa3500f987fdb41b8648a66f6de60b
+      internalID: 216573955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_81
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bc1c015f13a8b40915db919c56c77f
+      internalID: -1252020710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_82
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012cbaf168404134aa1783b625b81e70
+      internalID: -369701066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_83
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c2b07a4d4344c4793ce304b1417e8c
+      internalID: 294708994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_84
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa52090953f5a04ab05d4cee168aaa3
+      internalID: -32889331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_85
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07aa878bf66625e44be16ba688c0c963
+      internalID: -1818442957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_86
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c44316ad13180146b203d19979ac3ac
+      internalID: 2108904368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_87
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12972d058f19bc94985da9d0dc7b1f0c
+      internalID: 1111705397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_88
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf1d9e67e8c65f49b10e6e64323c6b3
+      internalID: -2126230967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_89
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17855111d4c6cdb4aa48faae1aa6d01d
+      internalID: -1383191821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_90
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2048b605e82a4ce49b18cdf30924d179
+      internalID: -1497748727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_91
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509e5e5a21eef6040a249790c409deca
+      internalID: 441250151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_92
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7cde495f4c48bf488f15d0e2a5e4f9f
+      internalID: -463920575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_93
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cf7d092cbf2c241abb4a5bf177152b
+      internalID: -860864278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_94
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7179cd2a2111aca4f9d7fcd06b623100
+      internalID: 2034597764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_95
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f702f1ffdb51d7c4b96dc79c29231fdf
+      internalID: 1630012059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_96
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 80
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55c7fe4ea00d1b45810634a1b066d24
+      internalID: 527389993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_97
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 80
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957cef50a898d6148970bff2c7d157c4
+      internalID: -1572172189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_98
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 80
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cd90309248cbd46aab25df712603c2
+      internalID: 1081367418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_99
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 80
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a39707d6b91b644a6f23e4d53b057a
+      internalID: 436600333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_100
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 80
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c873dcafba389474091bc1c809b68fbf
+      internalID: -1989024881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_101
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 80
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39cc9d8dcddfb8478ba203ed8c33d99
+      internalID: -982492375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_102
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 80
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a13450bd4509e4ab67a9846d255103
+      internalID: 149837010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_103
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 80
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78c5562a4f1c1a4b83e527656765d9a
+      internalID: -799620265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_104
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b427e466a8e2341aa7a8b01a8c3a52
+      internalID: -1116049843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_105
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88d9bf65d38b2d41bad8a8cab45c322
+      internalID: -1361864024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_106
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22985d7147f43545ac3ab1ff3b69e95
+      internalID: -675226196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_107
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900d79c2949c1ec41a13b823123b42a7
+      internalID: -1414721304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_108
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295fd7b547833af4dbca3eadfcd0be99
+      internalID: -1633004112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_109
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02265646d8fe258448867f262e197e29
+      internalID: -1398700661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_110
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36ea6873ead48745a52309e05cd7df6
+      internalID: -175236220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_111
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9c999fc645cc5458a27ae6599a7902
+      internalID: -1544812813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_112
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 40
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a20a56d5933b948ac268e51b8f9dd0
+      internalID: 1918944980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_113
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 40
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893a3cfd75057a8428f7322555c4c207
+      internalID: 1529439864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_114
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 40
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc30d0ef3be95d44083caf73971b81c0
+      internalID: -1921046583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_115
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 40
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3810fc6e3aa4304b927811c18548ab9
+      internalID: -223108644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_116
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 40
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae63d4c234718c243aae96fa7debc214
+      internalID: -330490527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_117
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 40
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059d8809b6bd57a47b5b4927d0d49252
+      internalID: 824696933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_118
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 40
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd66ffbf1a7f5f946ae71daa869579fb
+      internalID: 1743667176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_119
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 40
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14afdd7d66d25a144b3400195e67e6ed
+      internalID: 357681594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_120
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 20
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74136570121397c43b2e667c860290e0
+      internalID: 2087418277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_121
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 20
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1828c13901e855b46a7981e479ba2171
+      internalID: 1000566212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_122
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 20
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c433510e616bdf64b9ba04bbf666b0e4
+      internalID: -775899414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_123
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 20
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab1de84104a809489199f02144fbc21
+      internalID: 380448588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_124
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 20
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f90a0a4b9e08741b313579e593f889
+      internalID: -387990860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_125
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 20
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0a185605498f2448b9ee440ebf0296
+      internalID: -783878429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_126
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 20
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e0d5ebcd529ea4785eed33a162e4c6
+      internalID: -2081869142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_127
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 20
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d203a0a36a36a10478e67835f97abdd0
+      internalID: 1332753867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_128
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3373b311c4d9b545932b8a8e9a18ffd
+      internalID: 1244789970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_129
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27fe207eee75607468ee90168028106b
+      internalID: -1631895006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_130
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a16f8161dad30741a310e31e4efcc16
+      internalID: 1156394286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_131
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d27afc85ae19c43ae974d0ba393e97
+      internalID: 514892027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_132
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08feea3e826ee7046919bdac1e35b20b
+      internalID: 1843715943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_133
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd78549d01551a74bbc317691a328127
+      internalID: -800622151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_134
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691557320de5e344a864750a7fd789af
+      internalID: 787751099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bub Bob  Miscellaneous_135
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc95188c27660644699835503b89b984
+      internalID: -2043265936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +2982,143 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bub Bob  Miscellaneous_0: 976435918
+      Bub Bob  Miscellaneous_1: 2114812272
+      Bub Bob  Miscellaneous_10: 1668884333
+      Bub Bob  Miscellaneous_100: -1989024881
+      Bub Bob  Miscellaneous_101: -982492375
+      Bub Bob  Miscellaneous_102: 149837010
+      Bub Bob  Miscellaneous_103: -799620265
+      Bub Bob  Miscellaneous_104: -1116049843
+      Bub Bob  Miscellaneous_105: -1361864024
+      Bub Bob  Miscellaneous_106: -675226196
+      Bub Bob  Miscellaneous_107: -1414721304
+      Bub Bob  Miscellaneous_108: -1633004112
+      Bub Bob  Miscellaneous_109: -1398700661
+      Bub Bob  Miscellaneous_11: -987832102
+      Bub Bob  Miscellaneous_110: -175236220
+      Bub Bob  Miscellaneous_111: -1544812813
+      Bub Bob  Miscellaneous_112: 1918944980
+      Bub Bob  Miscellaneous_113: 1529439864
+      Bub Bob  Miscellaneous_114: -1921046583
+      Bub Bob  Miscellaneous_115: -223108644
+      Bub Bob  Miscellaneous_116: -330490527
+      Bub Bob  Miscellaneous_117: 824696933
+      Bub Bob  Miscellaneous_118: 1743667176
+      Bub Bob  Miscellaneous_119: 357681594
+      Bub Bob  Miscellaneous_12: -1253749726
+      Bub Bob  Miscellaneous_120: 2087418277
+      Bub Bob  Miscellaneous_121: 1000566212
+      Bub Bob  Miscellaneous_122: -775899414
+      Bub Bob  Miscellaneous_123: 380448588
+      Bub Bob  Miscellaneous_124: -387990860
+      Bub Bob  Miscellaneous_125: -783878429
+      Bub Bob  Miscellaneous_126: -2081869142
+      Bub Bob  Miscellaneous_127: 1332753867
+      Bub Bob  Miscellaneous_128: 1244789970
+      Bub Bob  Miscellaneous_129: -1631895006
+      Bub Bob  Miscellaneous_13: -902347708
+      Bub Bob  Miscellaneous_130: 1156394286
+      Bub Bob  Miscellaneous_131: 514892027
+      Bub Bob  Miscellaneous_132: 1843715943
+      Bub Bob  Miscellaneous_133: -800622151
+      Bub Bob  Miscellaneous_134: 787751099
+      Bub Bob  Miscellaneous_135: -2043265936
+      Bub Bob  Miscellaneous_14: -402122715
+      Bub Bob  Miscellaneous_15: -132248221
+      Bub Bob  Miscellaneous_16: -1081510826
+      Bub Bob  Miscellaneous_17: -1566967563
+      Bub Bob  Miscellaneous_18: -2082159145
+      Bub Bob  Miscellaneous_19: -1010458171
+      Bub Bob  Miscellaneous_2: 869888239
+      Bub Bob  Miscellaneous_20: 704473382
+      Bub Bob  Miscellaneous_21: -1013134414
+      Bub Bob  Miscellaneous_22: -637218382
+      Bub Bob  Miscellaneous_23: -582517705
+      Bub Bob  Miscellaneous_24: -1551490492
+      Bub Bob  Miscellaneous_25: 1455395536
+      Bub Bob  Miscellaneous_26: 894056585
+      Bub Bob  Miscellaneous_27: 1368034840
+      Bub Bob  Miscellaneous_28: -244874109
+      Bub Bob  Miscellaneous_29: -666702087
+      Bub Bob  Miscellaneous_3: 1247992093
+      Bub Bob  Miscellaneous_30: 230604070
+      Bub Bob  Miscellaneous_31: 253273475
+      Bub Bob  Miscellaneous_32: 37393358
+      Bub Bob  Miscellaneous_33: 313190510
+      Bub Bob  Miscellaneous_34: -1523895584
+      Bub Bob  Miscellaneous_35: -180378847
+      Bub Bob  Miscellaneous_36: -1120995247
+      Bub Bob  Miscellaneous_37: -2132423852
+      Bub Bob  Miscellaneous_38: -1265703902
+      Bub Bob  Miscellaneous_39: 769697211
+      Bub Bob  Miscellaneous_4: 1121350237
+      Bub Bob  Miscellaneous_40: -405820791
+      Bub Bob  Miscellaneous_41: -729410106
+      Bub Bob  Miscellaneous_42: -1781394185
+      Bub Bob  Miscellaneous_43: -551032053
+      Bub Bob  Miscellaneous_44: 558741347
+      Bub Bob  Miscellaneous_45: -436496357
+      Bub Bob  Miscellaneous_46: 1532353811
+      Bub Bob  Miscellaneous_47: -1021424999
+      Bub Bob  Miscellaneous_48: 1281162320
+      Bub Bob  Miscellaneous_49: 298134413
+      Bub Bob  Miscellaneous_5: -565106987
+      Bub Bob  Miscellaneous_50: 496364618
+      Bub Bob  Miscellaneous_51: 114800245
+      Bub Bob  Miscellaneous_52: -921270656
+      Bub Bob  Miscellaneous_53: -27325367
+      Bub Bob  Miscellaneous_54: -960063209
+      Bub Bob  Miscellaneous_55: 322905818
+      Bub Bob  Miscellaneous_56: 1328427630
+      Bub Bob  Miscellaneous_57: 1780544574
+      Bub Bob  Miscellaneous_58: -1582019572
+      Bub Bob  Miscellaneous_59: 274658969
+      Bub Bob  Miscellaneous_6: -1910144731
+      Bub Bob  Miscellaneous_60: 120581192
+      Bub Bob  Miscellaneous_61: 53891406
+      Bub Bob  Miscellaneous_62: 1782211226
+      Bub Bob  Miscellaneous_63: -1542775065
+      Bub Bob  Miscellaneous_64: 1471045991
+      Bub Bob  Miscellaneous_65: -1245964093
+      Bub Bob  Miscellaneous_66: -383352404
+      Bub Bob  Miscellaneous_67: -884269794
+      Bub Bob  Miscellaneous_68: 321451005
+      Bub Bob  Miscellaneous_69: 231096483
+      Bub Bob  Miscellaneous_7: -1425836948
+      Bub Bob  Miscellaneous_70: 1405980013
+      Bub Bob  Miscellaneous_71: -1719967856
+      Bub Bob  Miscellaneous_72: 1348622711
+      Bub Bob  Miscellaneous_73: 1733579993
+      Bub Bob  Miscellaneous_74: -2107883987
+      Bub Bob  Miscellaneous_75: 1285154318
+      Bub Bob  Miscellaneous_76: -487306131
+      Bub Bob  Miscellaneous_77: 64947957
+      Bub Bob  Miscellaneous_78: -2146605987
+      Bub Bob  Miscellaneous_79: -657146663
+      Bub Bob  Miscellaneous_8: -1792268202
+      Bub Bob  Miscellaneous_80: 216573955
+      Bub Bob  Miscellaneous_81: -1252020710
+      Bub Bob  Miscellaneous_82: -369701066
+      Bub Bob  Miscellaneous_83: 294708994
+      Bub Bob  Miscellaneous_84: -32889331
+      Bub Bob  Miscellaneous_85: -1818442957
+      Bub Bob  Miscellaneous_86: 2108904368
+      Bub Bob  Miscellaneous_87: 1111705397
+      Bub Bob  Miscellaneous_88: -2126230967
+      Bub Bob  Miscellaneous_89: -1383191821
+      Bub Bob  Miscellaneous_9: -214247847
+      Bub Bob  Miscellaneous_90: -1497748727
+      Bub Bob  Miscellaneous_91: 441250151
+      Bub Bob  Miscellaneous_92: -463920575
+      Bub Bob  Miscellaneous_93: -860864278
+      Bub Bob  Miscellaneous_94: 2034597764
+      Bub Bob  Miscellaneous_95: 1630012059
+      Bub Bob  Miscellaneous_96: 527389993
+      Bub Bob  Miscellaneous_97: -1572172189
+      Bub Bob  Miscellaneous_98: 1081367418
+      Bub Bob  Miscellaneous_99: 436600333
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

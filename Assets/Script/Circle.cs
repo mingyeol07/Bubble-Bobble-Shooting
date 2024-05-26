@@ -8,6 +8,7 @@ public class Circle : MonoBehaviour
     public ColorType colorType;
     public Vector2Int myCoordinate;
     private Animator animator;
+    [SerializeField] private GameObject enemy;
 
     private void Start()
     {
@@ -22,14 +23,6 @@ public class Circle : MonoBehaviour
     public void CheckColor()
     {
         CoordinateManager.Instance.CheckCloseCoordinate(this);
-    }
-
-    public void Boom()
-    {
-        animator = GetComponent<Animator>();
-        animator.enabled = true;
-        animator.applyRootMotion = true;
-        animator.SetTrigger("Boom");
     }
 
     public void Fall()
@@ -51,6 +44,16 @@ public class Circle : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
+    }
+
+    public void Boom()
+    {
+        animator = GetComponent<Animator>();
+        animator.enabled = true;
+        animator.applyRootMotion = true;
+        animator.SetTrigger("Boom");
+
+        Instantiate(enemy, transform.position, Quaternion.identity);
     }
 
     private void BoomAnimExit()
