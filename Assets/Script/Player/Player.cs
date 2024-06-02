@@ -17,6 +17,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         float h = Input.GetAxisRaw("Horizontal");
-        rigid.velocity = Vector2.right * h;
+        rigid.velocity = Vector2.right * h * 3;
     }
 }

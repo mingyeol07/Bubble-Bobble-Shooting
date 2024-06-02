@@ -10,17 +10,30 @@ public class Shooter : MonoBehaviour
     private bool isDrag;
     public float maxRotationAngle = 55f;
 
+    private void Start()
+    {
+        StartCoroutine(StartSetCircle());
+    }
+
+    private IEnumerator StartSetCircle()
+    {
+        yield return new WaitForSeconds(0.5f);
+        CircleSet();
+    }
+
     private void Update()
     {
+        Anim();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            CircleSet();
+            Shoot();
         }
     }
 
     private void Shoot()
     {
-        if(circle !=  null && ReloadManager.Instance.reloadExit == true)
+        if(circle != null && ReloadManager.Instance.reloadExit == true)
         {
             circle.GetComponent<CircleCollider2D>().enabled = true;
             circle.GetComponent<Animator>().enabled = false;
@@ -37,34 +50,15 @@ public class Shooter : MonoBehaviour
         circle = ReloadManager.Instance.GetShootCircle();
     }
 
-    private void OnMouseDown()
+    private void Anim()
     {
-        isDrag = true;
-    }
+        float hor = Input.GetAxisRaw("Horizontal");
 
-    private void OnMouseDrag()
-    {
-        if(isDrag)
+        float rotZ = Mathf.Atan2(arrow.transform.up.y, arrow.transform.up.x) * Mathf.Rad2Deg + 90 * hor;
+
+        if (rotZ > -maxRotationAngle && rotZ < maxRotationAngle)
         {
-            Pull();
+            arrow.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(rotZ, -maxRotationAngle, maxRotationAngle));
         }
-    }
-
-    private void Pull()
-    {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 mouseDistance = mousePos - (Vector2)transform.position;
-        float rotZ = Mathf.Atan2(mouseDistance.y, mouseDistance.x) * Mathf.Rad2Deg;
-
-        if (rotZ + 90 > -maxRotationAngle && rotZ + 90 < maxRotationAngle)
-        {
-            arrow.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(rotZ + 90, -maxRotationAngle, maxRotationAngle));
-        }
-    }
-
-    private void OnMouseUp()
-    {
-        isDrag = false;
-        Shoot();
     }
 }

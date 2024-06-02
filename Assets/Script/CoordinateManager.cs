@@ -12,12 +12,12 @@ public class CoordinateManager : MonoBehaviour
     /// 누적된 Cricle들을 담는 변수
     /// </summary>
     private Stack<Circle> foundedCircles = new Stack<Circle>();
-
-    const float evenX = -1.97f;
-    const float oddX = -2.3f;
-
-    const float evenY = 3.66f;
+    // odd -2.3, even -1.97
+    const float oddX = -8.15f;
+    const float evenX = -7.82f;
+   
     const float oddY = 4.22f;
+    const float evenY = 3.66f;
 
     const float plusX = 0.65f;
     const float plusY = 1.14f;
@@ -30,7 +30,7 @@ public class CoordinateManager : MonoBehaviour
 
     private void Initialization()
     {
-        coordinates = new CoordinateData[105];
+        coordinates = new CoordinateData[357];
 
         InitCoordinate();
         InitCoordinatePosition();
@@ -42,8 +42,8 @@ public class CoordinateManager : MonoBehaviour
         int index = 0;
         for (int i = 0; i < y; i++)
         {
-            bool isOdd = (i + 1) % 2 != 0;
-            int allocCnt = isOdd ? 8 : 7;
+            bool isEven = (i + 1) % 2 != 0;
+            int allocCnt = isEven ? 26 : 25;
 
             for (int j = 0; j < allocCnt; j++)
             {
@@ -65,14 +65,14 @@ public class CoordinateManager : MonoBehaviour
 
         for (int i =0; i < y; i++)
         {
-            bool isOdd = (i + 1) % 2 != 0;
-            int allocCnt = isOdd ? 8 : 7;
+            bool isEven = (i + 1) % 2 != 0;
+            int allocCnt = isEven ? 26 : 25;
 
-            nowY = (isOdd ? oddY : evenY) - (i / 2) * plusY;
+            nowY = (isEven ? oddY : evenY) - (i / 2) * plusY;
 
             for (int j = 0; j < allocCnt; j++)
             {
-                 nowX = (isOdd ? oddX : evenX) + (j * plusX);
+                 nowX = (isEven ? oddX : evenX) + (j * plusX);
                  coordinates[index].coordinatePosition = new Vector2(nowX, nowY);
                  index++;
             }
@@ -169,7 +169,7 @@ public class CoordinateManager : MonoBehaviour
     /// </summary>
     private void CheckOnFallCircle()
     {
-        for(int i =0; i < 8; i++)
+        for(int i =0; i < 26; i++)
         {
             if (IsValid(coordinates[i].coordinate, out Circle highCircle))
             {

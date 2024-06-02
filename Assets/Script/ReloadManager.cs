@@ -59,7 +59,6 @@ public class ReloadManager : MonoBehaviour
     public GameObject GetShootCircle()
     {
         NextCircleInit();
-
         GameObject circle = prevCircle;
         reloadExit = false;
         circle.GetComponent<Animator>().SetTrigger("Reload");
