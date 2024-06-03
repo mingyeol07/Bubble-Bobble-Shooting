@@ -30,7 +30,7 @@ public class CoordinateManager : MonoBehaviour
 
     private void Initialization()
     {
-        coordinates = new CoordinateData[357];
+        coordinates = new CoordinateData[383];
 
         InitCoordinate();
         InitCoordinatePosition();
@@ -235,8 +235,8 @@ public class CoordinateManager : MonoBehaviour
     public Vector2 GetCloseCoordinatePos(Vector2 circleVec, Circle circle)
     {
         FindCloseCoordinate(circleVec, out CoordinateData closeCoordinate);
-        if(circleSaveDict.ContainsKey(closeCoordinate.coordinate)) circleSaveDict.Remove(closeCoordinate.coordinate);
-        circleSaveDict.Add(closeCoordinate.coordinate, circle);
+        if(!circleSaveDict.ContainsKey(closeCoordinate.coordinate)) circleSaveDict.Add(closeCoordinate.coordinate, circle);
+
 
         circle.myCoordinate = closeCoordinate.coordinate;
         return closeCoordinate.coordinatePosition;
