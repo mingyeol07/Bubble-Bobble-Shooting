@@ -235,6 +235,7 @@ public class CoordinateManager : MonoBehaviour
     public Vector2 GetCloseCoordinatePos(Vector2 circleVec, Circle circle)
     {
         FindCloseCoordinate(circleVec, out CoordinateData closeCoordinate);
+        if(circleSaveDict.ContainsKey(closeCoordinate.coordinate)) circleSaveDict.Remove(closeCoordinate.coordinate);
         circleSaveDict.Add(closeCoordinate.coordinate, circle);
 
         circle.myCoordinate = closeCoordinate.coordinate;

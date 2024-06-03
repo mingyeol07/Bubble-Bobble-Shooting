@@ -9,6 +9,7 @@ public class Shooter : MonoBehaviour
     public GameObject circle;
     private bool isDrag;
     public float maxRotationAngle = 55f;
+    private float rotationZ;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class Shooter : MonoBehaviour
     {
         Anim();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Shoot();
         }
@@ -52,13 +53,20 @@ public class Shooter : MonoBehaviour
 
     private void Anim()
     {
-        float hor = Input.GetAxisRaw("Horizontal");
+        bool left = Input.GetKey(KeyCode.Q);
+        bool right = Input.GetKey(KeyCode.E);
 
-        float rotZ = Mathf.Atan2(arrow.transform.up.y, arrow.transform.up.x) * Mathf.Rad2Deg + 90 * hor;
-
-        if (rotZ > -maxRotationAngle && rotZ < maxRotationAngle)
+        if (left)
         {
-            arrow.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(rotZ, -maxRotationAngle, maxRotationAngle));
+            rotationZ += Time.deltaTime * 100;
         }
+
+        if(right)
+        {
+            rotationZ -= Time.deltaTime * 100;
+        }
+        rotationZ = Mathf.Clamp(rotationZ, -maxRotationAngle, maxRotationAngle);
+
+        arrow.rotation = Quaternion.Euler(0, 0, rotationZ);
     }
 }

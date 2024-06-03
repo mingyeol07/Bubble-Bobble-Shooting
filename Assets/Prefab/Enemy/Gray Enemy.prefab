@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 907415406781779891}
   - component: {fileID: -1097793863417080473}
   - component: {fileID: -314533171610927959}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gray Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -59,7 +59,7 @@ public class StageManager : MonoBehaviour
     {
         CoordinateData[] coordinates = coordinateManager.coordinates;
 
-        for(int i =0; i < coordinates.Length - 51; i ++)
+        for(int i =0; i < coordinates.Length - 51 - 25 - 26; i ++)
         {
             SetCirdle(coordinates[i]);
         }
