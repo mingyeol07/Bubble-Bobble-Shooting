@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public enum ColorType { Blue, Green, Red }
+public enum ColorType { Blue, Green, Red, Yellow, Orange,  Purple, White, Black }
 
 public class Circle : MonoBehaviour
 {

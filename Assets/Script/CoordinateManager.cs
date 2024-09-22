@@ -24,13 +24,14 @@ public class CoordinateManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
         Initialization();
+        Instance = this;
+
     }
 
     private void Initialization()
     {
-        coordinates = new CoordinateData[383];
+        coordinates = new CoordinateData[357];
 
         InitCoordinate();
         InitCoordinatePosition();

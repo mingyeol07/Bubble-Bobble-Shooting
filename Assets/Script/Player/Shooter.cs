@@ -26,7 +26,7 @@ public class Shooter : MonoBehaviour
     {
         Anim();
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             Shoot();
         }

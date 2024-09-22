@@ -28,7 +28,6 @@ public class StageManager : MonoBehaviour
     {
         coordinateManager = CoordinateManager.Instance;
         RandomSpawn();
-        // SetStagedata(1);
     }
 
     private void SetStagedata(int stageNumber)
