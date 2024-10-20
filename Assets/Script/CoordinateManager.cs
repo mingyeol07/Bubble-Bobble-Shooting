@@ -13,25 +13,64 @@ public class CoordinateManager : MonoBehaviour
     /// </summary>
     private Stack<Circle> foundedCircles = new Stack<Circle>();
     // odd -2.3, even -1.97
-    const float oddX = -8.15f;
-    const float evenX = -7.82f;
-   
-    const float oddY = 4.22f;
-    const float evenY = 3.66f;
+    private float oddX = -8.15f;
+    private float evenX = -7.82f;
 
-    const float plusX = 0.65f;
-    const float plusY = 1.14f;
+    private float oddY = 4.22f;
+    private float evenY = 3.66f;
+
+    private float plusX = 0.65f;
+    private float plusY = 1.14f;
+
+    private int XSize = 25;
+
+    private int arraySize = 357;
+
+    [SerializeField] private bool isNormalGame;
+
+    const float no_oddX = -2.3f;
+    const float no_evenX = -1.97f;
+
+    const float no_oddY = 4.22f;
+    const float no_evenY = 3.66f;
+
+    const float no_plusX = 0.65f;
+    const float no_plusY = 1.14f;
+
+    const int no_XSize = 7;
+
+    const int no_arraySize = 105;
 
     private void Awake()
     {
-        Initialization();
         Instance = this;
+        if (isNormalGame)
+        {
+            oddX = no_oddX;
+            oddY = no_oddY;
 
+            evenX = no_evenX;
+            evenY = no_evenY;
+
+            plusX = no_plusX;
+            plusY = no_plusY;
+
+            XSize = no_XSize;
+
+            arraySize = no_arraySize;
+        }
+
+        Initialization();
+    }
+
+    private void Start()
+    {
+        StageManager.Instance.StartStage();
     }
 
     private void Initialization()
     {
-        coordinates = new CoordinateData[357];
+        coordinates = new CoordinateData[arraySize];
 
         InitCoordinate();
         InitCoordinatePosition();
@@ -44,7 +83,7 @@ public class CoordinateManager : MonoBehaviour
         for (int i = 0; i < y; i++)
         {
             bool isEven = (i + 1) % 2 != 0;
-            int allocCnt = isEven ? 26 : 25;
+            int allocCnt = isEven ? XSize + 1 : XSize;
 
             for (int j = 0; j < allocCnt; j++)
             {
@@ -67,7 +106,7 @@ public class CoordinateManager : MonoBehaviour
         for (int i =0; i < y; i++)
         {
             bool isEven = (i + 1) % 2 != 0;
-            int allocCnt = isEven ? 26 : 25;
+            int allocCnt = isEven ? XSize + 1 : XSize;
 
             nowY = (isEven ? oddY : evenY) - (i / 2) * plusY;
 

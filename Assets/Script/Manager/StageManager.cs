@@ -27,7 +27,13 @@ public class StageManager : MonoBehaviour
     private void Start()
     {
         coordinateManager = CoordinateManager.Instance;
-        RandomSpawn();
+        //RandomSpawn();
+
+    }
+
+    public void StartStage()
+    {
+        SetStagedata(1);
     }
 
     private void SetStagedata(int stageNumber)
@@ -43,7 +49,7 @@ public class StageManager : MonoBehaviour
     private void SetCircle(int x, int y, int color)
     {
         GameObject go = Instantiate(circles[color], coordinateManager.GetPositionToCoordinate(new Vector2Int(x, y)), Quaternion.identity);
-        go.GetComponent<Circle>().SetPosition();
+        go.GetComponent<Circle>()?.SetPosition();
         go.GetComponent<CircleCollider2D>().enabled = true;
     }
 

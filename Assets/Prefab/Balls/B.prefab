@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f575c3b55d7c94498a731c7850501a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorType: 2
+  colorType: 0
   myCoordinate: {x: 0, y: 0}
   enemy: {fileID: 6453516630554966820, guid: 73e5464ecd0c23343b46611ab6c8711b, type: 3}
 --- !u!95 &8674219393957008649
