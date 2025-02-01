@@ -26,7 +26,7 @@ public class Shooter : MonoBehaviour
     {
         Anim();
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Shoot();
         }
@@ -53,8 +53,8 @@ public class Shooter : MonoBehaviour
 
     private void Anim()
     {
-        bool left = Input.GetKey(KeyCode.Q);
-        bool right = Input.GetKey(KeyCode.E);
+        bool left = Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftArrow);
+        bool right = Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.RightArrow);
 
         if (left)
         {

@@ -13,6 +13,8 @@ public class CoordinateManager : MonoBehaviour
     /// </summary>
     private Stack<Circle> foundedCircles = new Stack<Circle>();
     // odd -2.3, even -1.97
+
+    #region 변칙게임 초기화변수
     private float oddX = -8.15f;
     private float evenX = -7.82f;
 
@@ -25,6 +27,7 @@ public class CoordinateManager : MonoBehaviour
     private int XSize = 25;
 
     private int arraySize = 357;
+    #endregion
 
     [SerializeField] private bool isNormalGame;
 
@@ -165,11 +168,27 @@ public class CoordinateManager : MonoBehaviour
         {
             ExecuteBoomOnCircles();
             CheckOnFallCircle();
+            if(IsClearStage())
+            {
+                // stage Clear
+            }
         }
         else
         {
             foundedCircles.Clear();
         }
+    }
+
+    private bool IsClearStage()
+    {
+        for(int i = 0; i < 8; i++)
+        {
+            if(IsValid(coordinates[i].coordinate, out Circle highCircle))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     /// <summary>

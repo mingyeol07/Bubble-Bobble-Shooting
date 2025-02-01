@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rigid;
     private float speed = 3;
     private bool isFly = true;
+    private bool isUnNoramlGame = false;
 
     private void Awake()
     {
@@ -22,6 +23,14 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        if (!isUnNoramlGame)
+        {
+            Debug.Log("DD");
+            GetComponent<CircleCollider2D>().isTrigger = true;
+            Destroy(this.gameObject, 4);
+            return;
+        }
+
         isFly = true;
         int ranDir = Random.Range(-2, 1);
         transform.eulerAngles = ranDir < 0 ? new Vector3(0, transform.eulerAngles.y - 180, 0) : Vector3.zero;
@@ -34,12 +43,12 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (isUnNoramlGame && collision.gameObject.CompareTag("Ground"))
         {
             isFly = false;
         }
 
-        if(collision.gameObject.CompareTag("Wall"))
+        if(isUnNoramlGame && collision.gameObject.CompareTag("Wall"))
         {
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
         }
