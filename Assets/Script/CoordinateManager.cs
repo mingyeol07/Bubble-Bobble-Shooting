@@ -68,7 +68,7 @@ public class CoordinateManager : MonoBehaviour
 
     private void Start()
     {
-        StageManager.Instance.StartStage();
+        StageManager.Instance.StartStage(0);
     }
 
     private void Initialization()
@@ -170,7 +170,7 @@ public class CoordinateManager : MonoBehaviour
             CheckOnFallCircle();
             if(IsClearStage())
             {
-                // stage Clear
+                StageManager.Instance.ClearStage();
             }
         }
         else

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; set; }
     public List<GameObject> targets = new List<GameObject>();
 
+
     private void Awake()
     {
         Instance = this;
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     public void RemoveTarget(GameObject target)

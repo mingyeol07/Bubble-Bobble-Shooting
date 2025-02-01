@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using UnityEditor.SceneManagement;
+
 
 
 // # Unity
@@ -16,7 +18,9 @@ public class StageManager : MonoBehaviour
     /// circle의 순서는 ColorType의 color순서대로 맞춰야한다.
     /// </summary>
     [SerializeField] private List<GameObject> circles = new List<GameObject>();
-    private List<Dictionary<string, object>> stageData;
+    [SerializeField] private GoogleSheetLoader sheetLoader = new GoogleSheetLoader();
+
+    private int stageNumber = 0;
     private CoordinateManager coordinateManager;
 
     private void Awake()
@@ -31,23 +35,32 @@ public class StageManager : MonoBehaviour
 
     }
 
-    public void StartStage()
+    public void StartStage(int stageNumber)
     {
-        SetStagedata(1);
+        StartCoroutine(SetStagedata(stageNumber));
+    }
+    public void ClearStage()
+    {
+        stageNumber++;
+        StartStage(stageNumber);
     }
 
-    private void SetStagedata(int stageNumber)
+    private IEnumerator SetStagedata(int stageNumber)
     {
-        stageData = CSVReader.Read("Stage" + stageNumber.ToString());
+        yield return StartCoroutine(sheetLoader.SetListCircleInSheet(stageNumber));
+        CircleData[] stageData = sheetLoader.CircleDatas;
 
-        for (int i = 0; i < stageData.Count; i++)
+        for (int i = 0; i < stageData.Length; i++)
         {
-            SetCircle((int)stageData[i]["X"], (int)stageData[i]["Y"], (int)stageData[i]["Color"]);
+            SetCircle(stageData[i].x, stageData[i].y, (int)stageData[i].color);
         }
     }
 
     private void SetCircle(int x, int y, int color)
     {
+        Debug.Log(color);
+        Debug.Log(x);
+        Debug.Log(y);
         GameObject go = Instantiate(circles[color], coordinateManager.GetPositionToCoordinate(new Vector2Int(x, y)), Quaternion.identity);
         go.GetComponent<Circle>()?.SetPosition();
         go.GetComponent<CircleCollider2D>().enabled = true;
