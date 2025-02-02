@@ -4662,6 +4662,11 @@ MonoBehaviour:
   - {fileID: 9048607712817364851, guid: c2da6cb3f645b154fb77a1b016c9d24c, type: 3}
   - {fileID: 9048607712817364851, guid: 6c8c2b6fd6c825247a7b7ef30d3208b0, type: 3}
   - {fileID: 9048607712817364851, guid: e4f3f8fdd82234f43a6bfd24b7f7152b, type: 3}
+  - {fileID: 9048607712817364851, guid: ade1bba0e6452114b813a4e55b92bd08, type: 3}
+  - {fileID: 9048607712817364851, guid: 2ddc1ad5aa21f7844a227fd889aefe90, type: 3}
+  - {fileID: 9048607712817364851, guid: dfc15f689c4bb9b4ab1aa9ecff96485b, type: 3}
+  - {fileID: 9048607712817364851, guid: 727905527581b6a45ab431aa11e2aa7f, type: 3}
+  - {fileID: 9048607712817364851, guid: 2057ff587e904f94a929dac5c9a6eae5, type: 3}
   sheetLoader: {fileID: 408087634}
 --- !u!4 &1439384323
 Transform:
@@ -5243,9 +5248,16 @@ MonoBehaviour:
   reloadPos: {fileID: 1638981304}
   reloadExit: 0
   prefab:
+  - {fileID: 0}
   - {fileID: 9048607712817364851, guid: c2da6cb3f645b154fb77a1b016c9d24c, type: 3}
   - {fileID: 9048607712817364851, guid: 6c8c2b6fd6c825247a7b7ef30d3208b0, type: 3}
   - {fileID: 9048607712817364851, guid: e4f3f8fdd82234f43a6bfd24b7f7152b, type: 3}
+  - {fileID: 9048607712817364851, guid: ade1bba0e6452114b813a4e55b92bd08, type: 3}
+  - {fileID: 9048607712817364851, guid: 2ddc1ad5aa21f7844a227fd889aefe90, type: 3}
+  - {fileID: 9048607712817364851, guid: dfc15f689c4bb9b4ab1aa9ecff96485b, type: 3}
+  - {fileID: 9048607712817364851, guid: 727905527581b6a45ab431aa11e2aa7f, type: 3}
+  - {fileID: 9048607712817364851, guid: 2057ff587e904f94a929dac5c9a6eae5, type: 3}
+  shooter: {fileID: 298028916}
 --- !u!4 &1713400541
 Transform:
   m_ObjectHideFlags: 0

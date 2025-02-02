@@ -170,6 +170,7 @@ public class CoordinateManager : MonoBehaviour
             CheckOnFallCircle();
             if(IsClearStage())
             {
+                circleSaveDict.Clear();
                 StageManager.Instance.ClearStage();
             }
         }
@@ -223,79 +224,174 @@ public class CoordinateManager : MonoBehaviour
         foundedCircles.Clear();
     }
 
-    /// <summary>
-    /// 혼자 남겨진 공 검사
-    /// </summary>
     private void CheckOnFallCircle()
     {
-        for(int i =0; i < 26; i++)
+        HashSet<Circle> connectedCircles = new HashSet<Circle>(); // 천장과 연결된 버블들
+        Queue<Circle> queue = new Queue<Circle>();
+
+        // 1. 천장에 있는 버블들 찾기
+        foreach (Circle circle in circleSaveDict.Values)
         {
-            if (IsValid(coordinates[i].coordinate, out Circle highCircle))
+            if (circle.myCoordinate.y == 0) // y가 0이면 천장에 붙어 있음
             {
-                CircleFallCheck(highCircle);
+                queue.Enqueue(circle);
+                connectedCircles.Add(circle);
             }
         }
 
-        Stack<Circle> stack = new Stack<Circle>();
-
-        foreach(Circle fallCircle in circleSaveDict.Values)
+        // 2. BFS로 천장과 연결된 모든 버블 찾기
+        while (queue.Count > 0)
         {
-            if (!foundedCircles.Contains(fallCircle) && fallCircle.myCoordinate.y != 0)
+            Circle current = queue.Dequeue();
+            foreach (Circle neighbor in GetNeighbors(current)) // 인접 버블 가져오기
             {
-                stack.Push(fallCircle);
-            }
-        }
-
-        foreach (Circle fallCircle in stack)
-        {
-            fallCircle.Fall();
-            circleSaveDict.Remove(fallCircle.myCoordinate);
-        }
-
-        foundedCircles.Clear();
-    }
-
-    private void CircleFallCheck(Circle centerCircle)
-    {
-        Stack<Circle> coordinateStack = new Stack<Circle>();
-        coordinateStack.Push(centerCircle);
-
-        while (coordinateStack.Count > 0)
-        {
-            Circle circle = coordinateStack.Pop();
-            int CoordX = circle.myCoordinate.x;
-            int CoordY = circle.myCoordinate.y;
-
-            bool isEven = (CoordY + 1) % 2 != 0;
-            Vector2Int[] closeCircleVec = new Vector2Int[6];
-
-            if (!isEven)
-            {
-                closeCircleVec = new Vector2Int[6] { new Vector2Int(CoordX, CoordY - 1), new Vector2Int(CoordX + 1, CoordY - 1), new Vector2Int(CoordX + 1, CoordY),
-                               new Vector2Int(CoordX + 1, CoordY + 1), new Vector2Int(CoordX, CoordY + 1), new Vector2Int(CoordX - 1, CoordY)};
-            }
-            else
-            {
-                closeCircleVec = new Vector2Int[6]  { new Vector2Int(CoordX - 1, CoordY - 1), new Vector2Int(CoordX, CoordY - 1), new Vector2Int(CoordX + 1, CoordY),
-                               new Vector2Int(CoordX, CoordY + 1), new Vector2Int(CoordX - 1, CoordY + 1), new Vector2Int(CoordX - 1, CoordY)};
-            }
-
-            foreach (Vector2Int closeCircleCoordinate in closeCircleVec)
-            {
-                if (IsValid(closeCircleCoordinate, out Circle sameColorCircle))
+                if (!connectedCircles.Contains(neighbor))
                 {
-                    foundedCircles.Push(sameColorCircle);
-                    coordinateStack.Push(sameColorCircle);
+                    connectedCircles.Add(neighbor);
+                    queue.Enqueue(neighbor);
                 }
             }
         }
+
+        // 3. 연결되지 않은 버블 찾기
+        List<Circle> fallingCircles = new List<Circle>();
+        foreach (Circle circle in circleSaveDict.Values)
+        {
+            if (!connectedCircles.Contains(circle)) // 천장과 연결되지 않은 버블 찾기
+            {
+                fallingCircles.Add(circle);
+            }
+        }
+
+        // 4. 연결되지 않은 버블 제거
+        foreach (Circle fallingCircle in fallingCircles)
+        {
+            fallingCircle.Fall(); // 애니메이션 적용
+            circleSaveDict.Remove(fallingCircle.myCoordinate);
+        }
     }
+
+    private List<Circle> GetNeighbors(Circle circle)
+    {
+        List<Circle> neighbors = new List<Circle>();
+        int CoordX = circle.myCoordinate.x;
+        int CoordY = circle.myCoordinate.y;
+
+        // 짝수 행인지 홀수 행인지 판별
+        bool isEven = (CoordY + 1) % 2 != 0;
+        Vector2Int[] closeCircleVec;
+
+        if (!isEven)
+        {
+            closeCircleVec = new Vector2Int[6]
+            {
+            new Vector2Int(CoordX, CoordY - 1),
+            new Vector2Int(CoordX + 1, CoordY - 1),
+            new Vector2Int(CoordX + 1, CoordY),
+            new Vector2Int(CoordX + 1, CoordY + 1),
+            new Vector2Int(CoordX, CoordY + 1),
+            new Vector2Int(CoordX - 1, CoordY)
+            };
+        }
+        else
+        {
+            closeCircleVec = new Vector2Int[6]
+            {
+            new Vector2Int(CoordX - 1, CoordY - 1),
+            new Vector2Int(CoordX, CoordY - 1),
+            new Vector2Int(CoordX + 1, CoordY),
+            new Vector2Int(CoordX, CoordY + 1),
+            new Vector2Int(CoordX - 1, CoordY + 1),
+            new Vector2Int(CoordX - 1, CoordY)
+            };
+        }
+
+        // 유효한 좌표에 있는 Circle만 neighbors 리스트에 추가
+        foreach (Vector2Int neighborCoord in closeCircleVec)
+        {
+            if (circleSaveDict.TryGetValue(neighborCoord, out Circle neighbor))
+            {
+                neighbors.Add(neighbor);
+            }
+        }
+
+        return neighbors;
+    }
+
+    /// <summary>
+    /// 혼자 남겨진 공 검사
+    /// </summary>
+    //private void CheckOnFallCircle()
+    //{
+    //    for(int i =0; i < 26; i++)
+    //    {
+    //        if (IsValid(coordinates[i].coordinate, out Circle highCircle))
+    //        {
+    //            CircleFallCheck(highCircle);
+    //        }
+    //    }
+
+    //    Stack<Circle> stack = new Stack<Circle>();
+
+    //    foreach(Circle fallCircle in circleSaveDict.Values)
+    //    {
+    //        if (!foundedCircles.Contains(fallCircle) && fallCircle.myCoordinate.y != 0)
+    //        {
+    //            stack.Push(fallCircle);
+    //        }
+    //    }
+
+    //    foreach (Circle fallCircle in stack)
+    //    {
+    //        fallCircle.Fall();
+    //        circleSaveDict.Remove(fallCircle.myCoordinate);
+    //    }
+
+    //    foundedCircles.Clear();
+    //}
+
+    //private void CircleFallCheck(Circle centerCircle)
+    //{
+    //    Stack<Circle> coordinateStack = new Stack<Circle>();
+    //    coordinateStack.Push(centerCircle);
+
+    //    while (coordinateStack.Count > 0)
+    //    {
+    //        Circle circle = coordinateStack.Pop();
+    //        int CoordX = circle.myCoordinate.x;
+    //        int CoordY = circle.myCoordinate.y;
+
+    //        bool isEven = (CoordY + 1) % 2 != 0;
+    //        Vector2Int[] closeCircleVec = new Vector2Int[6];
+
+    //        if (!isEven)
+    //        {
+    //            closeCircleVec = new Vector2Int[6] { new Vector2Int(CoordX, CoordY - 1), new Vector2Int(CoordX + 1, CoordY - 1), new Vector2Int(CoordX + 1, CoordY),
+    //                           new Vector2Int(CoordX + 1, CoordY + 1), new Vector2Int(CoordX, CoordY + 1), new Vector2Int(CoordX - 1, CoordY)};
+    //        }
+    //        else
+    //        {
+    //            closeCircleVec = new Vector2Int[6]  { new Vector2Int(CoordX - 1, CoordY - 1), new Vector2Int(CoordX, CoordY - 1), new Vector2Int(CoordX + 1, CoordY),
+    //                           new Vector2Int(CoordX, CoordY + 1), new Vector2Int(CoordX - 1, CoordY + 1), new Vector2Int(CoordX - 1, CoordY)};
+    //        }
+
+    //        foreach (Vector2Int closeCircleCoordinate in closeCircleVec)
+    //        {
+    //            if (IsValid(closeCircleCoordinate, out Circle sameColorCircle))
+    //            {
+    //                foundedCircles.Push(sameColorCircle);
+    //                coordinateStack.Push(sameColorCircle);
+    //            }
+    //        }
+    //    }
+    //}
 
     public Vector2 GetCloseCoordinatePos(Vector2 circleVec, Circle circle)
     {
         FindCloseCoordinate(circleVec, out CoordinateData closeCoordinate);
+        Debug.Log(circleVec);
+        Debug.Log(closeCoordinate.coordinate);
         if(!circleSaveDict.ContainsKey(closeCoordinate.coordinate)) circleSaveDict.Add(closeCoordinate.coordinate, circle);
-
 
         circle.myCoordinate = closeCoordinate.coordinate;
         return closeCoordinate.coordinatePosition;

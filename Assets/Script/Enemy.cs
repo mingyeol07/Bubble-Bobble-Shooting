@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
     {
         if (!isUnNoramlGame)
         {
-            Debug.Log("DD");
             GetComponent<CircleCollider2D>().isTrigger = true;
             Destroy(this.gameObject, 4);
             return;

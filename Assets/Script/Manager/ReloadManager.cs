@@ -20,28 +20,40 @@ public class ReloadManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> prefab = new List<GameObject>();
     private Queue<GameObject> circleQueue = new Queue<GameObject>();
+    private GameObject[] useGameObjects;
+
+    [SerializeField] private Shooter shooter;
 
     private void Awake()
     {
         Instance = this;
     }
 
-    private void Start()
+    public void StartReloading(ColorType[] colorTypes)
     {
+        useGameObjects = new GameObject[colorTypes.Length];
+        for(int i = 0; i < colorTypes.Length; i++)
+        {
+            useGameObjects[i] = prefab[(int)colorTypes[i]];
+        }
+        Destroy(prevCircle);
+        prevCircle = null;
+        shooter.DestroyCircle();
         RandomCircle();
         NextCircleInit();
+        StartCoroutine(shooter.StartSetCircle());
     }
 
     private void RandomCircle()
     {
         HashSet<int> indexes = new HashSet<int>(); // 중복되지 않는 데이터들을 저장하는 HashSet
 
-        while (indexes.Count < prefab.Count)
+        while (indexes.Count < useGameObjects.Length)
         {
-            int randomIndex = UnityEngine.Random.Range(0, prefab.Count);
+            int randomIndex = UnityEngine.Random.Range(0, useGameObjects.Length);
             if (!indexes.Contains(randomIndex))
             {
-                circleQueue.Enqueue(prefab[randomIndex]);
+                circleQueue.Enqueue(useGameObjects[randomIndex]);
                 indexes.Add(randomIndex);
             }
         }

@@ -17,9 +17,9 @@ public class GoogleSheetLoader : MonoBehaviour
 
     const string googleSheetURL = "https://docs.google.com/spreadsheets/d/1uwkcHHwz0n8yGP1jpJAqxrc4s_CkFZlsxVq1qcj4i8g/export?format=tsv&range=A";
     private int[] stage_A = { 2 };
-    private int[] stage_D = { 31 };
+    private int[] stage_D = { 31, 10, 22 };
 
-    private int[] sheet = { 0 };
+    private int[] sheet = { 0, 1717451476, 137674187 };
 
     // googleSheetURL + stage1_D.ToString();
 

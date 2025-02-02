@@ -11,15 +11,16 @@ public class Shooter : MonoBehaviour
     public float maxRotationAngle = 55f;
     private float rotationZ;
 
-    private void Start()
+    public IEnumerator StartSetCircle()
     {
-        StartCoroutine(StartSetCircle());
-    }
-
-    private IEnumerator StartSetCircle()
-    {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         CircleSet();
+    }
+    
+    public void DestroyCircle()
+    {
+        if (circle == null) return;
+        Destroy(circle);
     }
 
     private void Update()

@@ -1,8 +1,8 @@
 // # Systems
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using UnityEditor.SceneManagement;
+using System.Linq;
+
 
 
 
@@ -49,18 +49,20 @@ public class StageManager : MonoBehaviour
     {
         yield return StartCoroutine(sheetLoader.SetListCircleInSheet(stageNumber));
         CircleData[] stageData = sheetLoader.CircleDatas;
+        HashSet<ColorType> circleColors = new HashSet<ColorType>();
 
         for (int i = 0; i < stageData.Length; i++)
         {
             SetCircle(stageData[i].x, stageData[i].y, (int)stageData[i].color);
+            circleColors.Add(stageData[i].color);
         }
+
+        yield return null;
+        ReloadManager.Instance.StartReloading(circleColors.ToArray());
     }
 
     private void SetCircle(int x, int y, int color)
     {
-        Debug.Log(color);
-        Debug.Log(x);
-        Debug.Log(y);
         GameObject go = Instantiate(circles[color], coordinateManager.GetPositionToCoordinate(new Vector2Int(x, y)), Quaternion.identity);
         go.GetComponent<Circle>()?.SetPosition();
         go.GetComponent<CircleCollider2D>().enabled = true;
